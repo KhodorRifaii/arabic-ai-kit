@@ -3,21 +3,30 @@ import { firstStrong } from './bidi.js';
 
 // Elements that get dir="auto": the browser picks the direction from the first strong
 // character of each one.
-const AUTO = new Set(['paragraph_open', 'heading_open', 'list_item_open', 'th_open', 'td_open']);
+const AUTO = new Set(['paragraph_open', 'heading_open', 'th_open', 'td_open']);
 
 // Containers need a fixed direction. dir="auto" skips every descendant that has its own dir,
-// and every li, p, td and th does, so an auto container would always fall back to ltr.
-const CONTAINERS = new Set(['bullet_list_open', 'ordered_list_open', 'blockquote_open', 'table_open']);
+// and every p, td and th does (and every li in a list), so an auto container, or a list item
+// whose text sits in a paragraph (loose list), would always fall back to ltr.
+const CONTAINERS = new Set([
+  'bullet_list_open', 'ordered_list_open', 'blockquote_open', 'table_open', 'list_item_open',
+]);
+const LIST_OPEN = new Set(['bullet_list_open', 'ordered_list_open']);
 
 const esc = (s) => MarkdownIt().utils.escapeHtml(s);
 
 // First strong direction in the container's text (first item, first cell, first paragraph).
+// For a list item, only the item's own text counts (nested lists get their own direction).
 // Code is skipped because it is always ltr and does not decide the direction.
 function containerDir(tokens, start) {
   const open = tokens[start];
   for (let i = start + 1; i < tokens.length; i++) {
     const t = tokens[i];
     if (t.type === open.type.replace('_open', '_close') && t.level === open.level) break;
+    if (open.type === 'list_item_open' && LIST_OPEN.has(t.type)) {
+      while (!(tokens[i].type === t.type.replace('_open', '_close') && tokens[i].level === t.level)) i++;
+      continue;
+    }
     if (t.type !== 'inline') continue;
     for (const c of t.children) {
       if (c.type === 'text') {

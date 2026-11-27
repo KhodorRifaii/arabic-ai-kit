@@ -6,18 +6,18 @@
     { "markdown": "- Apples",
       "blocks": [
         {"type": "list", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"},
-        {"type": "list-item", "match": "Apples", "expected_dir": "ltr", "expected_attr": "auto"}
+        {"type": "list-item", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"}
       ] },
     { "markdown": "- Apples\n- تف",
       "blocks": [
         {"type": "list", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"},
-        {"type": "list-item", "match": "تف", "expected_dir": "rtl", "expected_attr": "auto"}
+        {"type": "list-item", "match": "تف", "expected_dir": "rtl", "expected_attr": "rtl"}
       ] },
     { "markdown": "- Apples\n- تفاح\n- Ba",
       "blocks": [
         {"type": "list", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"},
-        {"type": "list-item", "match": "تفاح", "expected_dir": "rtl", "expected_attr": "auto"},
-        {"type": "list-item", "match": "Ba", "expected_dir": "ltr", "expected_attr": "auto"}
+        {"type": "list-item", "match": "تفاح", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "list-item", "match": "Ba", "expected_dir": "ltr", "expected_attr": "ltr"}
       ] }
   ]
 }

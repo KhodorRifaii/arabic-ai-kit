@@ -5,8 +5,8 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
-    {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
     {"type": "code-block", "match": "npm test", "expected_dir": "ltr", "expected_attr": "ltr"},
-    {"type": "list-item", "match": "تأكد", "expected_dir": "rtl", "expected_attr": "auto"}
+    {"type": "list-item", "match": "تأكد", "expected_dir": "rtl", "expected_attr": "rtl"}
   ]
 }

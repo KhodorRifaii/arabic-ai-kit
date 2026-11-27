@@ -5,8 +5,8 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "افتح المشروع", "expected_dir": "rtl", "expected_attr": "rtl"},
-    {"type": "list-item", "match": "افتح", "expected_dir": "rtl", "expected_attr": "auto"},
-    {"type": "list-item", "match": "شغل", "expected_dir": "rtl", "expected_attr": "auto"},
-    {"type": "list-item", "match": "راجع", "expected_dir": "rtl", "expected_attr": "auto"}
+    {"type": "list-item", "match": "افتح", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "شغل", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "راجع", "expected_dir": "rtl", "expected_attr": "rtl"}
   ]
 }

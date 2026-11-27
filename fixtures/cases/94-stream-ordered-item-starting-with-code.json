@@ -6,12 +6,12 @@
     { "markdown": "1. `npm",
       "blocks": [
         {"type": "list", "match": "npm", "expected_dir": "ltr", "expected_attr": "ltr"},
-        {"type": "list-item", "match": "npm", "expected_dir": "ltr", "expected_attr": "auto"}
+        {"type": "list-item", "match": "npm", "expected_dir": "ltr", "expected_attr": "ltr"}
       ] },
     { "markdown": "1. `npm install` ثم",
       "blocks": [
         {"type": "list", "match": "ثم", "expected_dir": "rtl", "expected_attr": "rtl"},
-        {"type": "list-item", "match": "ثم", "expected_dir": "rtl", "expected_attr": "auto"}
+        {"type": "list-item", "match": "ثم", "expected_dir": "rtl", "expected_attr": "rtl"}
       ] }
   ]
 }

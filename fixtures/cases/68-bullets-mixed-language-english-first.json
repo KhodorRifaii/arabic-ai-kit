@@ -5,11 +5,11 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"},
-    {"type": "list-item", "match": "Apples", "expected_dir": "ltr", "expected_attr": "auto"},
-    {"type": "list-item", "match": "تفاح", "expected_dir": "rtl", "expected_attr": "auto"},
-    {"type": "list-item", "match": "Bananas", "expected_dir": "ltr", "expected_attr": "auto"},
-    {"type": "list-item", "match": "موز", "expected_dir": "rtl", "expected_attr": "auto"},
-    {"type": "list-item", "match": "3 oranges", "expected_dir": "ltr", "expected_attr": "auto"},
-    {"type": "list-item", "match": "برتقالات", "expected_dir": "rtl", "expected_attr": "auto"}
+    {"type": "list-item", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "تفاح", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "Bananas", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "موز", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "3 oranges", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "برتقالات", "expected_dir": "rtl", "expected_attr": "rtl"}
   ]
 }

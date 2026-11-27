@@ -6,19 +6,19 @@
     { "markdown": "- Item",
       "blocks": [
         {"type": "list", "match": "Item", "expected_dir": "ltr", "expected_attr": "ltr"},
-        {"type": "list-item", "match": "Item", "expected_dir": "ltr", "expected_attr": "auto"}
+        {"type": "list-item", "match": "Item", "expected_dir": "ltr", "expected_attr": "ltr"}
       ] },
     { "markdown": "- Item\n  - فر",
       "blocks": [
         {"type": "list", "match": "Item", "expected_dir": "ltr", "expected_attr": "ltr"},
-        {"type": "list-item", "match": "Item", "expected_dir": "ltr", "expected_attr": "auto"},
-        {"type": "list-item", "match": "فر", "expected_dir": "rtl", "expected_attr": "auto"}
+        {"type": "list-item", "match": "Item", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "list-item", "match": "فر", "expected_dir": "rtl", "expected_attr": "rtl"}
       ] },
     { "markdown": "- Item\n  - فرعي\n- Next",
       "blocks": [
         {"type": "list", "match": "Item", "expected_dir": "ltr", "expected_attr": "ltr"},
-        {"type": "list-item", "match": "فرعي", "expected_dir": "rtl", "expected_attr": "auto"},
-        {"type": "list-item", "match": "Next", "expected_dir": "ltr", "expected_attr": "auto"}
+        {"type": "list-item", "match": "فرعي", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "list-item", "match": "Next", "expected_dir": "ltr", "expected_attr": "ltr"}
       ] }
   ]
 }

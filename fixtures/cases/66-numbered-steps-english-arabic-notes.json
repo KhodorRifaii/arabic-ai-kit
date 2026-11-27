@@ -5,8 +5,8 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "Open the terminal", "expected_dir": "ltr", "expected_attr": "ltr"},
-    {"type": "list-item", "match": "Open the", "expected_dir": "ltr", "expected_attr": "auto"},
-    {"type": "list-item", "match": "Run", "expected_dir": "ltr", "expected_attr": "auto"},
-    {"type": "list-item", "match": "Start the", "expected_dir": "ltr", "expected_attr": "auto"}
+    {"type": "list-item", "match": "Open the", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "Run", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "Start the", "expected_dir": "ltr", "expected_attr": "ltr"}
   ]
 }

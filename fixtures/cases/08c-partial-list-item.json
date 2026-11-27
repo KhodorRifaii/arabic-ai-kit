@@ -5,6 +5,6 @@
   "partial": true,
   "blocks": [
     {"type": "list", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "rtl"},
-    {"type": "list-item", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "auto"}
+    {"type": "list-item", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "rtl"}
   ]
 }

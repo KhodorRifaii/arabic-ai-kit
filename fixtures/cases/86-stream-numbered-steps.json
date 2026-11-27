@@ -6,17 +6,17 @@
     { "markdown": "1. شغّل",
       "blocks": [
         {"type": "list", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
-        {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"}
+        {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"}
       ] },
     { "markdown": "1. شغّل `npm install`",
       "blocks": [
         {"type": "list", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
-        {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"}
+        {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"}
       ] },
     { "markdown": "1. شغّل `npm install`\n2. Then run",
       "blocks": [
         {"type": "list", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
-        {"type": "list-item", "match": "Then run", "expected_dir": "ltr", "expected_attr": "auto"}
+        {"type": "list-item", "match": "Then run", "expected_dir": "ltr", "expected_attr": "ltr"}
       ] }
   ]
 }

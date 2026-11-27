@@ -6,8 +6,8 @@
   "blocks": [
     {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"},
     {"type": "list", "match": "ثبّت", "expected_dir": "rtl", "expected_attr": "rtl"},
-    {"type": "list-item", "match": "ثبّت", "expected_dir": "rtl", "expected_attr": "auto"},
-    {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "ثبّت", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
     {"type": "code-span", "match": "npm run dev", "expected_dir": "ltr", "expected_attr": "ltr"},
     {"type": "paragraph", "match": "إذا ظهر", "expected_dir": "rtl", "expected_attr": "auto"},
     {"type": "code-block", "match": "Cannot find module", "expected_dir": "ltr", "expected_attr": "ltr"},

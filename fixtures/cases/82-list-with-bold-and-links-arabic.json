@@ -5,7 +5,7 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "الخطوة 1", "expected_dir": "rtl", "expected_attr": "rtl"},
-    {"type": "list-item", "match": "الخطوة 1", "expected_dir": "rtl", "expected_attr": "auto"},
-    {"type": "list-item", "match": "الخطوة 2", "expected_dir": "rtl", "expected_attr": "auto"}
+    {"type": "list-item", "match": "الخطوة 1", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "الخطوة 2", "expected_dir": "rtl", "expected_attr": "rtl"}
   ]
 }

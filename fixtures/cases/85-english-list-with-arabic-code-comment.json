@@ -5,8 +5,8 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "Run", "expected_dir": "ltr", "expected_attr": "ltr"},
-    {"type": "list-item", "match": "Run", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "list-item", "match": "Run", "expected_dir": "ltr", "expected_attr": "ltr"},
     {"type": "code-span", "match": "echo", "expected_dir": "ltr", "expected_attr": "ltr"},
-    {"type": "list-item", "match": "Check", "expected_dir": "ltr", "expected_attr": "auto"}
+    {"type": "list-item", "match": "Check", "expected_dir": "ltr", "expected_attr": "ltr"}
   ]
 }

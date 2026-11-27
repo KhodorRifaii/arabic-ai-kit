@@ -5,7 +5,7 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "ثم انتظر", "expected_dir": "rtl", "expected_attr": "rtl", "note": "The code span at the start is ignored for the direction."},
-    {"type": "list-item", "match": "ثم انتظر", "expected_dir": "rtl", "expected_attr": "auto"},
-    {"type": "list-item", "match": "للتحقق", "expected_dir": "rtl", "expected_attr": "auto"}
+    {"type": "list-item", "match": "ثم انتظر", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "للتحقق", "expected_dir": "rtl", "expected_attr": "rtl"}
   ]
 }

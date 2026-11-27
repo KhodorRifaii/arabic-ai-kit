@@ -23,7 +23,7 @@ The first character with a Unicode strong bidi class decides: strong R/AL (Arabi
 
 ### expected_attr
 
-What the adapter must emit as the `dir` attribute on that element: `auto` (browser decides) or a fixed `rtl`/`ltr`. Paragraphs, headings, list items and table cells use `auto`; lists (`ul`, `ol`), blockquotes and tables use a fixed `rtl` or `ltr` equal to `expected_dir` (the browser's `auto` skips descendants with their own `dir`, so an `auto` container would compute ltr), or `auto` when `expected_dir` is `none`; `pre` and `code` use `ltr` (for a code block, both the `pre` and its inner `code` element must carry `dir="ltr"`); a `none` block uses `auto`. Checked for every block, including `none` blocks, independently of `expected_dir`.
+What the adapter must emit as the `dir` attribute on that element: `auto` (browser decides) or a fixed `rtl`/`ltr`. Paragraphs, headings and table cells use `auto`; lists (`ul`, `ol`), list items (`li`), blockquotes and tables use a fixed `rtl` or `ltr` equal to `expected_dir` (the browser's `auto` skips descendants with their own `dir`, so an `auto` container, or an `li` whose text sits in a `p` in a loose list, would compute ltr), or `auto` when `expected_dir` is `none`; `pre` and `code` use `ltr` (for a code block, both the `pre` and its inner `code` element must carry `dir="ltr"`); a `none` block uses `auto`. Checked for every block, including `none` blocks, independently of `expected_dir`.
 
 ## Cases
 
@@ -115,7 +115,7 @@ What the adapter must emit as the `dir` attribute on that element: `auto` (brows
 | `81-arabic-link-text-in-english-sentence` | Arabic link text inside an English sentence: ltr. |
 | `82-list-with-bold-and-links-arabic` | Arabic list items with bold labels and links. |
 | `83-headings-with-inline-code` | Headings with inline code: code is ignored for the direction. |
-| `84-loose-ordered-list-with-code-block` | Loose Arabic ordered list with a code block. Known failing: the adapter output has li dir="auto" containing p dir="auto", so li computes ltr (see report). |
+| `84-loose-ordered-list-with-code-block` | Loose Arabic ordered list with a code block. |
 | `85-english-list-with-arabic-code-comment` | English list item with an inline code span holding Arabic. |
 | `86-stream-numbered-steps` | Stream: Arabic numbered steps with a command, then an English item. |
 | `87-stream-bold-start` | Stream: bold marker typed before Arabic. |

@@ -11,8 +11,8 @@ render('اسمي Omar\n\n- item\n');
 
 `render(markdown)` returns HTML where:
 
-- `p`, `h1`-`h6`, `li`, `th`, `td` get `dir="auto"` (the browser picks the direction from the first strong character).
-- `ul`, `ol`, `blockquote` and `table` get a fixed `dir="rtl"` or `dir="ltr"` from the first strong character of their first text (`auto` when there is none). `dir="auto"` would not work on them: it skips descendants that have their own `dir`, and every `li`, `p`, `td` and `th` does, so the container would always fall back to ltr.
+- `p`, `h1`-`h6`, `th`, `td` get `dir="auto"` (the browser picks the direction from the first strong character).
+- `ul`, `ol`, `li`, `blockquote` and `table` get a fixed `dir="rtl"` or `dir="ltr"` from the first strong character of their first text (for an `li`, its own text, including the paragraph inside a loose item; `auto` when there is none). `dir="auto"` would not work on them: it skips descendants that have their own `dir`, and every `li`, `p`, `td` and `th` does, so the container would always fall back to ltr. The same happens to an `li` in a loose list, whose text sits inside a `p`.
 - `pre` and `code` (block and inline) get `dir="ltr"`, so code never flips inside Arabic text.
 
 It is a small markdown-it plugin (`src/index.js`, one dependency: `markdown-it`).

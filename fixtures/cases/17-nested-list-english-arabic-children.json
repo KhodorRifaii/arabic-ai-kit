@@ -5,9 +5,9 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "Main item", "expected_dir": "ltr", "expected_attr": "ltr"},
-    {"type": "list-item", "match": "Main item", "expected_dir": "ltr", "expected_attr": "auto"},
-    {"type": "list-item", "match": "عنصر فرعي", "expected_dir": "rtl", "expected_attr": "auto"},
-    {"type": "list-item", "match": "second child", "expected_dir": "ltr", "expected_attr": "auto"},
-    {"type": "list-item", "match": "Another item", "expected_dir": "ltr", "expected_attr": "auto"}
+    {"type": "list-item", "match": "Main item", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "عنصر فرعي", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "second child", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "Another item", "expected_dir": "ltr", "expected_attr": "ltr"}
   ]
 }

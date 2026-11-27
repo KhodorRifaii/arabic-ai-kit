@@ -5,9 +5,9 @@
   "partial": false,
   "blocks": [
     {"type": "list", "match": "Run", "expected_dir": "ltr", "expected_attr": "ltr"},
-    {"type": "list-item", "match": "Run", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "list-item", "match": "Run", "expected_dir": "ltr", "expected_attr": "ltr"},
     {"type": "code-span", "match": "npm install", "expected_dir": "ltr", "expected_attr": "ltr"},
-    {"type": "list-item", "match": "Print", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "list-item", "match": "Print", "expected_dir": "ltr", "expected_attr": "ltr"},
     {"type": "code-span", "match": "مرحبا", "expected_dir": "ltr", "expected_attr": "ltr", "note": "Code stays ltr even when its content is Arabic."}
   ]
 }
