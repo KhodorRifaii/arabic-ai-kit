@@ -10,7 +10,7 @@ const fail = (msg) => { failures++; if (failures <= 40) console.log('  FAIL ' + 
 
 // ---- 1. Large generated documents -------------------------------------------------------
 const MARKER = /\b\d{6}\b/g;
-const SIZES = [[1, 500], [2, 1000], [3, 2000]]; // [seed, top-level blocks]
+const SIZES = [[1, 500], [2, 1000], [3, 2000], [4, 5000], [5, 10000]]; // [seed, top-level blocks]
 let largest = null;
 
 for (const [seed, n] of SIZES) {
@@ -27,7 +27,7 @@ for (const [seed, n] of SIZES) {
   const before = failures;
   const mix = {};
   for (const b of doc.checks) mix[`${b.type}:${b.expected_dir}`] = (mix[`${b.type}:${b.expected_dir}`] ?? 0) + 1;
-  if (seed === 3) console.log('  expectation mix (seed 3): ' + Object.entries(mix).sort().map(([k, v]) => `${k}=${v}`).join(' '));
+  if (seed === 5) console.log('  expectation mix (seed 5): ' + Object.entries(mix).sort().map(([k, v]) => `${k}=${v}`).join(' '));
   for (const b of doc.checks) {
     const c = (index.get(b.match) ?? []).filter((e) => TAGS[b.type].includes(e.tagName));
     if (!c.length) { fail(`seed ${seed} ${b.type} ${b.match}: element not found`); continue; }
@@ -66,13 +66,16 @@ const MESSAGES = {
 };
 
 // Long messages: the first paragraph, then the body repeated until the message is several KB.
-const REPEATS = 12;
-for (const [k, v] of Object.entries(MESSAGES)) {
+// Short messages are checked at every 20 characters, long ones (tens of KB) at every 100.
+const longVariant = (v, repeats) => {
   const [head, ...rest] = v.split('\n\n');
-  MESSAGES[k] = [head, ...Array.from({ length: REPEATS }, () => rest.join('\n\n'))].join('\n\n');
+  return [head, ...Array.from({ length: repeats }, () => rest.join('\n\n'))].join('\n\n');
+};
+const STREAMS = [];
+for (const [k, v] of Object.entries(MESSAGES)) {
+  STREAMS.push({ name: k, msg: longVariant(v, 12), step: 20 });
+  STREAMS.push({ name: `${k}, long`, msg: longVariant(v, 80), step: 100 });
 }
-
-const STEP = 20;
 
 function checkPrefix(name, prefix, len) {
   const els = elements(parseFragment(render(prefix)));
@@ -103,14 +106,14 @@ function checkPrefix(name, prefix, len) {
   return els.length;
 }
 
-for (const [name, msg] of Object.entries(MESSAGES)) {
+for (const { name, msg, step } of STREAMS) {
   const before = failures;
   let prefixes = 0;
-  for (let len = STEP; len < msg.length + STEP; len += STEP) {
+  for (let len = step; len < msg.length + step; len += step) {
     checkPrefix(name, msg.slice(0, Math.min(len, msg.length)), len);
     prefixes++;
   }
-  console.log(`${failures === before ? 'ok  ' : 'FAIL'} stream "${name}": ${msg.length} chars, ${prefixes} prefixes (every ${STEP} chars)`);
+  console.log(`${failures === before ? 'ok  ' : 'FAIL'} stream "${name}": ${msg.length} chars, ${prefixes} prefixes (every ${step} chars)`);
 }
 
 // ---- 3. Timing (reported, never a failure) ----------------------------------------------
