@@ -1,0 +1,10 @@
+{
+  "id": "01-pure-arabic",
+  "description": "Pure Arabic heading and paragraph (Lebanese/Modern Arabic). Both blocks start with Arabic, so both are rtl.",
+  "markdown": "# مرحبا بكم في المساعد\n\nاسمي خضر وأنا مهندس ذكاء اصطناعي. نحكي بالعربي كل يوم.\n",
+  "partial": false,
+  "blocks": [
+    { "type": "heading", "match": "مرحبا بكم في المساعد", "expected_dir": "rtl" },
+    { "type": "paragraph", "match": "اسمي خضر", "expected_dir": "rtl" }
+  ]
+}

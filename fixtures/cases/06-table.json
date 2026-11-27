@@ -1,0 +1,16 @@
+{
+  "id": "06-table",
+  "description": "GFM table with Arabic headers, mixed cells. Header and each cell follow its own first strong character. The table element is set to auto in the reference style.",
+  "markdown": "| الاسم | Role | الخبرة |\n|---|---|---|\n| خضر | AI Engineer | سنتين |\n| Ali | Backend | 3 years |\n",
+  "partial": false,
+  "blocks": [
+    { "type": "table-cell", "match": "الاسم", "expected_dir": "rtl" },
+    { "type": "table-cell", "match": "Role", "expected_dir": "ltr" },
+    { "type": "table-cell", "match": "الخبرة", "expected_dir": "rtl" },
+    { "type": "table-cell", "match": "خضر", "expected_dir": "rtl" },
+    { "type": "table-cell", "match": "AI Engineer", "expected_dir": "ltr" },
+    { "type": "table-cell", "match": "سنتين", "expected_dir": "rtl" },
+    { "type": "table-cell", "match": "Ali", "expected_dir": "ltr" },
+    { "type": "table-cell", "match": "3 years", "expected_dir": "ltr" }
+  ]
+}

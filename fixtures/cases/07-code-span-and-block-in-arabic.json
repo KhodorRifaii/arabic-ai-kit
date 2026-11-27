@@ -1,0 +1,12 @@
+{
+  "id": "07-code-span-and-block-in-arabic",
+  "description": "Arabic paragraphs around a fenced code block and an inline code span. Prose blocks are rtl. Code is always ltr regardless of the surrounding text.",
+  "markdown": "تشغيل السكربت بسيط:\n\n```python\nprint(\"مرحبا\")\n```\n\nبعدها نعمل `pip install langchain` وخلص.\n",
+  "partial": false,
+  "blocks": [
+    { "type": "paragraph", "match": "تشغيل السكربت بسيط", "expected_dir": "rtl" },
+    { "type": "code-block", "match": "print(\"مرحبا\")", "expected_dir": "ltr" },
+    { "type": "paragraph", "match": "بعدها نعمل", "expected_dir": "rtl" },
+    { "type": "code-span", "match": "pip install langchain", "expected_dir": "ltr" }
+  ]
+}

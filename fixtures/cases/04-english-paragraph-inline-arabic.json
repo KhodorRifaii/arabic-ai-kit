@@ -1,0 +1,9 @@
+{
+  "id": "04-english-paragraph-inline-arabic",
+  "description": "English paragraph with an Arabic phrase inline. The first strong character is Latin, so the paragraph is ltr; the Arabic phrase is a run inside it.",
+  "markdown": "The bot greets every user with مرحبا first, then answers in English with citations.\n",
+  "partial": false,
+  "blocks": [
+    { "type": "paragraph", "match": "The bot greets every user", "expected_dir": "ltr" }
+  ]
+}

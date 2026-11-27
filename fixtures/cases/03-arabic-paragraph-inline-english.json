@@ -1,0 +1,9 @@
+{
+  "id": "03-arabic-paragraph-inline-english",
+  "description": "Arabic paragraph with English tech words inline. The first strong character is Arabic, so the paragraph is rtl even though most words are English.",
+  "markdown": "اسمي Khodor و أنا أعمل على AI engineering، وأستخدم LangChain مع Gemini API للبحث في الملفات.\n",
+  "partial": false,
+  "blocks": [
+    { "type": "paragraph", "match": "اسمي Khodor", "expected_dir": "rtl" }
+  ]
+}
