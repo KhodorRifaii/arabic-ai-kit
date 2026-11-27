@@ -1,0 +1,14 @@
+{
+  "id": "25-headings-mixed-levels",
+  "description": "Headings alternate language across levels: each heading follows its own first strong character.",
+  "markdown": "# Overview\n\n## نظرة عامة\n\n### Details\n\n#### التفاصيل\n\n##### 2026 ملخص\n\n###### 2026 summary\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "Overview", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "heading", "match": "نظرة عامة", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "heading", "match": "Details", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "heading", "match": "التفاصيل", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "heading", "match": "ملخص", "expected_dir": "rtl", "expected_attr": "auto", "note": "Starts with digits (neutral), first strong is Arabic."},
+    {"type": "heading", "match": "2026 summary", "expected_dir": "ltr", "expected_attr": "auto", "note": "Starts with digits (neutral), first strong is Latin."}
+  ]
+}

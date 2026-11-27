@@ -1,0 +1,9 @@
+{
+  "id": "35-url-inside-arabic",
+  "description": "A URL inside an Arabic sentence. The sentence starts with Arabic, so it is rtl.",
+  "markdown": "لمزيد من المعلومات زر https://example.com/docs اليوم.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "لمزيد", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

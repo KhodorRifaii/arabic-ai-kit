@@ -4,7 +4,7 @@
   "markdown": "- عنصر أول with English words\n- الخطوة الثانية: deploy على Render\n- item three بالعربي بعده\n",
   "partial": false,
   "blocks": [
-    {"type": "list", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "rtl"},
     {"type": "list-item", "match": "عنصر أول with English words", "expected_dir": "rtl", "expected_attr": "auto"},
     {"type": "list-item", "match": "الخطوة الثانية", "expected_dir": "rtl", "expected_attr": "auto"},
     {"type": "list-item", "match": "item three", "expected_dir": "ltr", "expected_attr": "auto", "note": "Starts with English, so ltr. The kit must set dir on li; without it the item inherits rtl from the list."}

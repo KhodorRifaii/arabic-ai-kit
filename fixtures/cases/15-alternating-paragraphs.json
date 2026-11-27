@@ -1,0 +1,12 @@
+{
+  "id": "15-alternating-paragraphs",
+  "description": "Paragraphs alternate between Arabic and English. Each one takes its own direction; a block never inherits from the previous one.",
+  "markdown": "مرحبا، هذه فقرة عربية.\n\nThis is an English paragraph.\n\nوهذه فقرة عربية ثانية with a few English words.\n\nAnd the last one is English again.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "مرحبا، هذه", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "This is an English", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "وهذه فقرة", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "And the last", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

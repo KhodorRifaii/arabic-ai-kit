@@ -4,7 +4,7 @@
   "markdown": "| الاسم | Role | الخبرة |\n|---|---|---|\n| خضر | AI Engineer | سنتين |\n| Ali | Backend | 3 years |\n",
   "partial": false,
   "blocks": [
-    {"type": "table", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto", "note": "Table-level block: first header is Arabic."},
+    {"type": "table", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "rtl", "note": "Table-level block: first header is Arabic."},
     {"type": "table-cell", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto"},
     {"type": "table-cell", "match": "Role", "expected_dir": "ltr", "expected_attr": "auto"},
     {"type": "table-cell", "match": "الخبرة", "expected_dir": "rtl", "expected_attr": "auto"},

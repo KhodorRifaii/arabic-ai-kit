@@ -1,0 +1,9 @@
+{
+  "id": "32-emoji-before-arabic",
+  "description": "Emoji are neutral. A paragraph that starts with an emoji and then Arabic is rtl.",
+  "markdown": "🙂 مرحبا بالجميع 🎉\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "45-urdu",
+  "description": "Urdu is an R-type script. An Urdu heading and paragraph are rtl.",
+  "markdown": "# خوش آمدید\n\nمیرا نام خضر ہے اور میں اے آئی انجینئر ہوں۔\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "خوش آمدید", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "میرا نام", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

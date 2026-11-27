@@ -1,0 +1,10 @@
+{
+  "id": "31-arabic-indic-digits",
+  "description": "Arabic-Indic digits are not strong characters. Followed by Arabic the paragraph is rtl; followed by English it is ltr.",
+  "markdown": "٢٠٢٦ سنة جديدة سعيدة\n\n١٢٣ items in the cart\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "سنة جديدة", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "items in", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

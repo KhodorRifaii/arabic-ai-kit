@@ -1,0 +1,14 @@
+{
+  "id": "23-headings-h1-h6-arabic",
+  "description": "Arabic headings of every level h1 to h6. All are rtl.",
+  "markdown": "# عنوان 1\n\n## عنوان 2\n\n### عنوان 3\n\n#### عنوان 4\n\n##### عنوان 5\n\n###### عنوان 6\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "عنوان 1", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "heading", "match": "عنوان 2", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "heading", "match": "عنوان 3", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "heading", "match": "عنوان 4", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "heading", "match": "عنوان 5", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "heading", "match": "عنوان 6", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

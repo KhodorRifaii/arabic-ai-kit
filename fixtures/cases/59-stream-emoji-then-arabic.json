@@ -1,0 +1,19 @@
+{
+  "id": "59-stream-emoji-then-arabic",
+  "description": "Stream: an emoji only (none), then Arabic arrives and the paragraph becomes rtl.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "🙂",
+      "blocks": [
+        {"type": "paragraph", "match": "🙂", "expected_dir": "none", "expected_attr": "auto"}
+      ] },
+    { "markdown": "🙂 م",
+      "blocks": [
+        {"type": "paragraph", "match": "م", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "🙂 مرحبا",
+      "blocks": [
+        {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

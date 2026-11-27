@@ -1,0 +1,9 @@
+{
+  "id": "30-number-before-english",
+  "description": "Paragraph that starts with a number and then English: ltr, because the number is neutral.",
+  "markdown": "42 items were processed in 3 minutes.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "42 items", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

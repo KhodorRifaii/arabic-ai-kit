@@ -1,0 +1,13 @@
+{
+  "id": "16-nested-list-arabic-english-children",
+  "description": "Arabic outer item with an English child and an Arabic child. The outer list and item are rtl; each nested item follows its own first strong character.",
+  "markdown": "- عنصر رئيسي\n  - child item in English\n  - عنصر فرعي\n- عنصر ثاني\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "عنصر رئيسي", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "عنصر رئيسي", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "child item", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "list-item", "match": "عنصر فرعي", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "عنصر ثاني", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

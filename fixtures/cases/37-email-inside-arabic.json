@@ -1,0 +1,9 @@
+{
+  "id": "37-email-inside-arabic",
+  "description": "An email address inside an Arabic sentence. The paragraph is rtl.",
+  "markdown": "راسلني على user@example.com في أي وقت.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "راسلني", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

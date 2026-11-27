@@ -1,0 +1,19 @@
+{
+  "id": "50-stream-arabic-then-english-words",
+  "description": "Stream: an Arabic word, then English words are appended. The paragraph stays rtl at every step.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "مرحبا",
+      "blocks": [
+        {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "مرحبا hello",
+      "blocks": [
+        {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "مرحبا hello world again",
+      "blocks": [
+        {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

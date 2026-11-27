@@ -1,0 +1,13 @@
+{
+  "id": "39-inline-code-in-arabic-list",
+  "description": "Arabic list items with inline code. The items are rtl; each code span is ltr and carries its own dir=\"ltr\".",
+  "markdown": "- شغل الأمر `npm install` أولا\n- ثم نفذ `npm test` للتحقق\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "شغل", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "شغل الأمر", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-span", "match": "npm install", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "ثم نفذ", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-span", "match": "npm test", "expected_dir": "ltr", "expected_attr": "ltr"}
+  ]
+}

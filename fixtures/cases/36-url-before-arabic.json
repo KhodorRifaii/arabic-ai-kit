@@ -1,0 +1,9 @@
+{
+  "id": "36-url-before-arabic",
+  "description": "A paragraph that starts with a URL. The URL letters are Latin, so the paragraph is ltr even though Arabic follows.",
+  "markdown": "https://example.com هو الموقع الرسمي للمشروع.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "example.com", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

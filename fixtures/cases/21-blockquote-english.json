@@ -1,0 +1,10 @@
+{
+  "id": "21-blockquote-english",
+  "description": "English blockquote. The blockquote and the paragraph inside it are ltr.",
+  "markdown": "> Knowledge is power.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "blockquote", "match": "Knowledge is", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "paragraph", "match": "Knowledge is", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

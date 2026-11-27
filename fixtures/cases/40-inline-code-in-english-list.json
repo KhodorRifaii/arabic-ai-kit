@@ -1,0 +1,13 @@
+{
+  "id": "40-inline-code-in-english-list",
+  "description": "English list items with inline code that contains Arabic. Items are ltr; code spans are ltr even with Arabic inside.",
+  "markdown": "- Run `npm install` first\n- Print `مرحبا` to check\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "Run", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "Run", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "code-span", "match": "npm install", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "Print", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "code-span", "match": "مرحبا", "expected_dir": "ltr", "expected_attr": "ltr", "note": "Code stays ltr even when its content is Arabic."}
+  ]
+}

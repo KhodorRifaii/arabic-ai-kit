@@ -1,0 +1,24 @@
+{
+  "id": "53-stream-nested-list",
+  "description": "Stream of a nested list that starts English and gets an Arabic child. The outer list and item stay ltr; the nested item is rtl.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "- Item",
+      "blocks": [
+        {"type": "list", "match": "Item", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "list-item", "match": "Item", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "- Item\n  - فر",
+      "blocks": [
+        {"type": "list", "match": "Item", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "list-item", "match": "Item", "expected_dir": "ltr", "expected_attr": "auto"},
+        {"type": "list-item", "match": "فر", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "- Item\n  - فرعي\n- Next",
+      "blocks": [
+        {"type": "list", "match": "Item", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "list-item", "match": "فرعي", "expected_dir": "rtl", "expected_attr": "auto"},
+        {"type": "list-item", "match": "Next", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] }
+  ]
+}

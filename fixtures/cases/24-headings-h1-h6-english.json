@@ -1,0 +1,14 @@
+{
+  "id": "24-headings-h1-h6-english",
+  "description": "English headings of every level h1 to h6. All are ltr.",
+  "markdown": "# Title 1\n\n## Title 2\n\n### Title 3\n\n#### Title 4\n\n##### Title 5\n\n###### Title 6\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "Title 1", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "heading", "match": "Title 2", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "heading", "match": "Title 3", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "heading", "match": "Title 4", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "heading", "match": "Title 5", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "heading", "match": "Title 6", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "51-stream-english-then-arabic-sentence",
+  "description": "Stream: English words, then an Arabic sentence is appended. The paragraph stays ltr at every step.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "Hello",
+      "blocks": [
+        {"type": "paragraph", "match": "Hello", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "Hello wor",
+      "blocks": [
+        {"type": "paragraph", "match": "Hello", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "Hello world مرحبا بكم",
+      "blocks": [
+        {"type": "paragraph", "match": "Hello", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] }
+  ]
+}

@@ -11,7 +11,7 @@ Top level of a case file:
 - `partial`: `true` when the input is cut mid-stream, `false` otherwise.
 - `markdown`: the input. Streaming cases with several steps use `chunks` instead: a list of `{ "markdown", "blocks" }` objects, each `markdown` being the text so far.
 - `blocks`: the blocks to check. Each block has:
-  - `type`: `heading`, `paragraph`, `list`, `list-item`, `table`, `table-cell`, `code-block` or `code-span`.
+  - `type`: `heading`, `paragraph`, `list`, `list-item`, `blockquote`, `table`, `table-cell`, `code-block` or `code-span`.
   - `match`: a substring of that block's text (an empty string matches the first block of that type that has no text).
   - `expected_dir`: `rtl`, `ltr` or `none`.
   - `expected_attr`: `auto`, `rtl` or `ltr`.
@@ -19,11 +19,11 @@ Top level of a case file:
 
 ### expected_dir
 
-The first character with a Unicode strong bidi class decides: strong R/AL (Arabic, Hebrew and similar) gives `rtl`, strong L (Latin, Cyrillic and similar) gives `ltr`. Digits, punctuation and spaces are skipped. A block with no strong character is `none`: the case makes no direction assertion, and the check skips it when comparing direction with reference output. Code is `ltr`.
+The first character with a Unicode strong bidi class decides: strong R/AL (Arabic, Hebrew and similar) gives `rtl`, strong L (Latin, Cyrillic and similar) gives `ltr`. Digits, punctuation and spaces are skipped, but strong right-to-left characters that are not letters (for example the Arabic question mark U+061F, the Arabic semicolon U+061B, the Arabic full stop U+06D4 and the rial sign U+FDFC) count as `rtl`. A block with no strong character is `none`: the case makes no direction assertion, and the check skips it when comparing direction with reference output. Code is `ltr` by rule (the runner requires `expected_dir` and `expected_attr` to be `ltr` for every code block and code span), even when its first strong character is Arabic (cases 40 and 42); the first-strong check in the test runner skips code blocks and code spans.
 
 ### expected_attr
 
-What the adapter must emit as the `dir` attribute on that element: `auto` (browser decides) or a fixed `rtl`/`ltr`. Prose, lists, list items, tables and cells use `auto`; `pre` and `code` use `ltr`; a `none` block uses `auto`. Checked for every block, including `none` blocks, independently of `expected_dir`.
+What the adapter must emit as the `dir` attribute on that element: `auto` (browser decides) or a fixed `rtl`/`ltr`. Paragraphs, headings, list items and table cells use `auto`; lists (`ul`, `ol`), blockquotes and tables use a fixed `rtl` or `ltr` equal to `expected_dir` (the browser's `auto` skips descendants with their own `dir`, so an `auto` container would compute ltr), or `auto` when `expected_dir` is `none`; `pre` and `code` use `ltr` (for a code block, both the `pre` and its inner `code` element must carry `dir="ltr"`); a `none` block uses `auto`. Checked for every block, including `none` blocks, independently of `expected_dir`.
 
 ## Cases
 
@@ -44,6 +44,55 @@ What the adapter must emit as the `dir` attribute on that element: `auto` (brows
 | `10-hebrew` | Hebrew heading and paragraph are rtl (second RTL script). |
 | `11-cyrillic` | Cyrillic heading and paragraph are ltr (second LTR script). |
 | `12-neutral-only` | Heading and paragraph with only digits and punctuation: `none`, attr `auto`. |
+| `13-long-arabic-multi-paragraph` | Three Arabic paragraphs: all rtl. |
+| `14-long-english-multi-paragraph` | Three English paragraphs: all ltr. |
+| `15-alternating-paragraphs` | Paragraphs alternate Arabic and English; each takes its own direction. |
+| `16-nested-list-arabic-english-children` | Nested list, Arabic outer item with English and Arabic children. |
+| `17-nested-list-english-arabic-children` | Nested list, English outer item with Arabic and English children. |
+| `18-ordered-list-arabic` | Ordered Arabic list: digits are neutral, list and items rtl. |
+| `19-ordered-list-mixed-items` | Ordered list with alternating item languages; list follows its first item. |
+| `20-blockquote-arabic` | Arabic blockquote and its paragraph are rtl. |
+| `21-blockquote-english` | English blockquote and its paragraph are ltr. |
+| `22-blockquote-arabic-inside-english-text` | Arabic blockquote between English paragraphs. |
+| `23-headings-h1-h6-arabic` | Arabic headings h1 to h6: all rtl. |
+| `24-headings-h1-h6-english` | English headings h1 to h6: all ltr. |
+| `25-headings-mixed-levels` | Headings alternate language across levels, including digit-first headings. |
+| `26-table-english-first-header` | Table with an English first header: table ltr, Arabic cells rtl, number cells none. |
+| `27-table-numbers-only-cells` | Table with a numeric column: number cells are none. |
+| `28-numbers-inside-arabic` | Numbers inside an Arabic sentence stay rtl. |
+| `29-date-before-arabic` | ISO date before Arabic is rtl; date after English is ltr. |
+| `30-number-before-english` | Number before English is ltr. |
+| `31-arabic-indic-digits` | Arabic-Indic digits are neutral: before Arabic rtl, before English ltr. |
+| `32-emoji-before-arabic` | Emoji before Arabic: rtl. |
+| `33-emoji-before-english` | Emoji before English: ltr. |
+| `34-emoji-only` | Emoji only: none. |
+| `35-url-inside-arabic` | URL inside an Arabic sentence: rtl. |
+| `36-url-before-arabic` | URL at the start, Arabic after: ltr. |
+| `37-email-inside-arabic` | Email inside an Arabic sentence: rtl. |
+| `38-email-before-arabic` | Email at the start, Arabic after: ltr. |
+| `39-inline-code-in-arabic-list` | Inline code in Arabic list items: items rtl, code ltr. |
+| `40-inline-code-in-english-list` | Inline code in English list items; code with Arabic content stays ltr. |
+| `41-code-block-in-english-text` | Code block between English paragraphs: ltr. |
+| `42-code-block-arabic-comment` | Code block with an Arabic comment: ltr by the code rule. |
+| `43-code-block-no-language` | Code block without a language in Arabic text: ltr. |
+| `44-persian` | Persian heading and paragraph: rtl. |
+| `45-urdu` | Urdu heading and paragraph: rtl. |
+| `46-persian-with-english` | Persian with English words, and English with a Persian word. |
+| `47-punctuation-only` | Punctuation-only paragraph: none. |
+| `48-digits-only` | Digits-only heading and paragraph: none. |
+| `49-neutral-list` | List with only digits and punctuation: none. |
+| `50-stream-arabic-then-english-words` | Stream: Arabic then English words appended, stays rtl. |
+| `51-stream-english-then-arabic-sentence` | Stream: English then an Arabic sentence appended, stays ltr. |
+| `52-stream-heading` | Stream of a heading: none, then rtl. |
+| `53-stream-nested-list` | Stream of a nested list: English outer, Arabic child. |
+| `54-stream-table` | Stream of a table: paragraph, then table, then cells. |
+| `55-stream-code-fence-then-arabic` | Stream: code fence opened, closed, then an Arabic paragraph. |
+| `56-stream-digits-then-arabic` | Stream: digits (none), then Arabic arrives (rtl). |
+| `57-stream-blockquote` | Stream of a blockquote: none, then rtl. |
+| `58-stream-url-then-arabic` | Stream: URL then Arabic, ltr at every step. |
+| `59-stream-emoji-then-arabic` | Stream: emoji (none), then Arabic (rtl). |
+| `60-strong-rtl-symbol-first` | Rial sign (U+FDFC) first: a strong RTL symbol that is not a letter, so rtl. |
+| `61-arabic-question-mark-first` | Arabic question mark (U+061F) first, English after: rtl. |
 
 ## Notes
 

@@ -1,0 +1,10 @@
+{
+  "id": "44-persian",
+  "description": "Persian is an R-type script (Arabic letters). A Persian heading and paragraph are rtl.",
+  "markdown": "# سلام دنیا\n\nمن خضر هستم و روی هوش مصنوعی کار می‌کنم.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "سلام دنیا", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "من خضر", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

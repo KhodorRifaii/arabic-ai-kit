@@ -1,0 +1,23 @@
+{
+  "id": "56-stream-digits-then-arabic",
+  "description": "Stream: digits only (none), then Arabic arrives and the paragraph becomes rtl.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "2026",
+      "blocks": [
+        {"type": "paragraph", "match": "2026", "expected_dir": "none", "expected_attr": "auto"}
+      ] },
+    { "markdown": "2026 ",
+      "blocks": [
+        {"type": "paragraph", "match": "2026", "expected_dir": "none", "expected_attr": "auto"}
+      ] },
+    { "markdown": "2026 في",
+      "blocks": [
+        {"type": "paragraph", "match": "في", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "2026 في المدينة",
+      "blocks": [
+        {"type": "paragraph", "match": "في المدينة", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

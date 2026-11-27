@@ -1,0 +1,13 @@
+{
+  "id": "27-table-numbers-only-cells",
+  "description": "Table with a numeric column. The number cells have no strong character: none, attr auto. The table follows the first header (Arabic).",
+  "markdown": "| الشهر | المبلغ |\n|---|---|\n| يناير | 1200 |\n| فبراير | 950.5 |\n",
+  "partial": false,
+  "blocks": [
+    {"type": "table", "match": "الشهر", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "table-cell", "match": "الشهر", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "المبلغ", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "1200", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "950.5", "expected_dir": "none", "expected_attr": "auto"}
+  ]
+}

@@ -9,7 +9,7 @@
       ] },
     { "markdown": "1. مرحبا",
       "blocks": [
-      {"type": "list", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto", "note": "The block flips from none to rtl once Arabic arrives."},
+      {"type": "list", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "rtl", "note": "The block flips from none to rtl once Arabic arrives."},
       {"type": "list-item", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
       ] }
   ]

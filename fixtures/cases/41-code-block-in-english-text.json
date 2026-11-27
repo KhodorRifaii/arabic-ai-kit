@@ -1,0 +1,11 @@
+{
+  "id": "41-code-block-in-english-text",
+  "description": "A fenced code block between English paragraphs. Prose is ltr; the code block is ltr with dir=\"ltr\" on pre and code.",
+  "markdown": "Run this script:\n\n```js\nconsole.log('hello');\n```\n\nThen check the output.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "Run this", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "code-block", "match": "console.log('hello')", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "paragraph", "match": "Then check", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

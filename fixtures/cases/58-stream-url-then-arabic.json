@@ -1,0 +1,19 @@
+{
+  "id": "58-stream-url-then-arabic",
+  "description": "Stream: a URL being typed, then Arabic text after it. The paragraph starts with Latin letters, so it is ltr at every step.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "https://exa",
+      "blocks": [
+        {"type": "paragraph", "match": "https", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "https://example.com مر",
+      "blocks": [
+        {"type": "paragraph", "match": "https", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "https://example.com مرحبا بكم",
+      "blocks": [
+        {"type": "paragraph", "match": "https", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] }
+  ]
+}

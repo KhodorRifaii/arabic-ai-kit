@@ -1,0 +1,10 @@
+{
+  "id": "42-code-block-arabic-comment",
+  "description": "A code block whose first line is an Arabic comment. The first strong character in the block is Arabic, but code must stay ltr (expected_attr ltr), so expected_dir is ltr here by the code rule, not by first-strong.",
+  "markdown": "شغل هذا السكربت:\n\n```python\n# مرحبا بالعالم\nprint('hi')\n```\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "شغل هذا", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-block", "match": "print(", "expected_dir": "ltr", "expected_attr": "ltr", "note": "Code is always ltr, even though its first strong character is Arabic."}
+  ]
+}

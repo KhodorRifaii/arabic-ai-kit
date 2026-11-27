@@ -1,0 +1,17 @@
+{
+  "id": "57-stream-blockquote",
+  "description": "Stream of a blockquote that starts with digits (none) and then gets Arabic (rtl).",
+  "partial": true,
+  "chunks": [
+    { "markdown": "> 12",
+      "blocks": [
+        {"type": "blockquote", "match": "12", "expected_dir": "none", "expected_attr": "auto"},
+        {"type": "paragraph", "match": "12", "expected_dir": "none", "expected_attr": "auto"}
+      ] },
+    { "markdown": "> 12 مرحبا",
+      "blocks": [
+        {"type": "blockquote", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

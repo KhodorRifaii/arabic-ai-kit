@@ -1,0 +1,12 @@
+{
+  "id": "49-neutral-list",
+  "description": "A list whose items contain only digits and punctuation: list and items are none, attr auto.",
+  "markdown": "- 123\n- (456)\n- 7.8\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "123", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "list-item", "match": "123", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "list-item", "match": "(456)", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "list-item", "match": "7.8", "expected_dir": "none", "expected_attr": "auto"}
+  ]
+}

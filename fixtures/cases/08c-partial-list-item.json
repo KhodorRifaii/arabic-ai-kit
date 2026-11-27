@@ -4,7 +4,7 @@
   "markdown": "- عنصر أول with Eng",
   "partial": true,
   "blocks": [
-    {"type": "list", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "rtl"},
     {"type": "list-item", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "auto"}
   ]
 }

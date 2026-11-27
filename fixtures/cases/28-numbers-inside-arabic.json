@@ -1,0 +1,9 @@
+{
+  "id": "28-numbers-inside-arabic",
+  "description": "Numbers inside an Arabic sentence. Digits are neutral, so the paragraph stays rtl.",
+  "markdown": "في عام 2026 اشتريت 3 كتب بسعر 45.50 ريال.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "في عام", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

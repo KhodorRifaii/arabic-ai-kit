@@ -1,0 +1,19 @@
+{
+  "id": "52-stream-heading",
+  "description": "Stream of a heading. A bare marker makes an empty heading (none); the direction appears with the first strong character.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "#",
+      "blocks": [
+        {"type": "heading", "match": "", "expected_dir": "none", "expected_attr": "auto"}
+      ] },
+    { "markdown": "# مر",
+      "blocks": [
+        {"type": "heading", "match": "مر", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "# مرحبا بكم",
+      "blocks": [
+        {"type": "heading", "match": "مرحبا بكم", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

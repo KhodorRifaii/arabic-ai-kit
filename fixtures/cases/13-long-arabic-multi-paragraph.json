@@ -1,0 +1,11 @@
+{
+  "id": "13-long-arabic-multi-paragraph",
+  "description": "Three Arabic paragraphs in a row. Each starts with Arabic, so each is rtl.",
+  "markdown": "أهلا بكم في هذا الدليل القصير عن بناء المساعدات الذكية.\n\nأولا نجمع الملفات ونقسمها إلى أجزاء صغيرة، ثم نحسب التمثيل الرقمي لكل جزء.\n\nأخيرا نخزن النتائج ونجرب الأسئلة حتى نتأكد من جودة الأجوبة.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "أهلا بكم", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "أولا نجمع", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "أخيرا نخزن", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

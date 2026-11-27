@@ -1,0 +1,13 @@
+{
+  "id": "19-ordered-list-mixed-items",
+  "description": "Ordered list with alternating item languages. The list follows its first item (English, ltr); each item follows its own text.",
+  "markdown": "1. Install the package\n2. شغل الاختبارات\n3. Read the results\n4. راجع النتائج\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "Install the package", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "Install", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "list-item", "match": "شغل", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "Read the", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "list-item", "match": "راجع", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

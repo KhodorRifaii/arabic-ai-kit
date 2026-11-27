@@ -1,0 +1,23 @@
+{
+  "id": "54-stream-table",
+  "description": "Stream of a table. Before the separator row it is just a paragraph (rtl); once the separator arrives it is a table (rtl) and then cells appear.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "| الاسم | Role |",
+      "blocks": [
+        {"type": "paragraph", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "| الاسم | Role |\n|---|---|",
+      "blocks": [
+        {"type": "table", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "table-cell", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto"},
+        {"type": "table-cell", "match": "Role", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "| الاسم | Role |\n|---|---|\n| خضر | AI |",
+      "blocks": [
+        {"type": "table", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "table-cell", "match": "خضر", "expected_dir": "rtl", "expected_attr": "auto"},
+        {"type": "table-cell", "match": "AI", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] }
+  ]
+}

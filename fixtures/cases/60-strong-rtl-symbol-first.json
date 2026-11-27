@@ -1,0 +1,9 @@
+{
+  "id": "60-strong-rtl-symbol-first",
+  "description": "A paragraph that starts with the rial sign (U+FDFC), a strong right-to-left symbol that is not a letter. It decides the direction: rtl.",
+  "markdown": "﷼ 50 للمنتج\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "للمنتج", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

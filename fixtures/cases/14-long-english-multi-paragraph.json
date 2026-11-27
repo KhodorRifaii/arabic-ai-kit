@@ -1,0 +1,11 @@
+{
+  "id": "14-long-english-multi-paragraph",
+  "description": "Three English paragraphs in a row. Each starts with Latin, so each is ltr.",
+  "markdown": "Welcome to this short guide on building assistants.\n\nFirst we collect the files and split them into small chunks, then embed every chunk.\n\nFinally we store the vectors and test questions until the answers look right.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "Welcome to", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "First we collect", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "Finally we store", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

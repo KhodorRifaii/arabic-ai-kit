@@ -1,0 +1,20 @@
+{
+  "id": "55-stream-code-fence-then-arabic",
+  "description": "Stream: an English code fence is opened, filled, closed, and followed by an Arabic paragraph. Code stays ltr; the new paragraph is rtl.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "```py",
+      "blocks": [
+        {"type": "code-block", "match": "", "expected_dir": "ltr", "expected_attr": "ltr"}
+      ] },
+    { "markdown": "```py\nprint(1)",
+      "blocks": [
+        {"type": "code-block", "match": "print(1)", "expected_dir": "ltr", "expected_attr": "ltr"}
+      ] },
+    { "markdown": "```py\nprint(1)\n```\n\nشكرا لك",
+      "blocks": [
+        {"type": "code-block", "match": "print(1)", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "paragraph", "match": "شكرا", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

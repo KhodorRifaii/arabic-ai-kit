@@ -1,0 +1,9 @@
+{
+  "id": "33-emoji-before-english",
+  "description": "A paragraph that starts with an emoji and then English is ltr; Arabic later in the text does not change that.",
+  "markdown": "🚀 Launch day مرحبا everyone\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "Launch day", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

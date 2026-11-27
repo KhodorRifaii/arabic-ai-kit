@@ -1,0 +1,12 @@
+{
+  "id": "22-blockquote-arabic-inside-english-text",
+  "description": "An Arabic blockquote between English paragraphs. Only the quote is rtl.",
+  "markdown": "As the proverb says:\n\n> الصبر مفتاح الفرج\n\nThat is all for today.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "As the proverb", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "blockquote", "match": "الصبر", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "paragraph", "match": "الصبر", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "That is all", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

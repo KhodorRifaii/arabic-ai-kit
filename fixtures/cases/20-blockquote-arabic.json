@@ -1,0 +1,10 @@
+{
+  "id": "20-blockquote-arabic",
+  "description": "Arabic blockquote. The blockquote and the paragraph inside it are rtl.",
+  "markdown": "> العلم نور والجهل ظلام.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "blockquote", "match": "العلم نور", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "paragraph", "match": "العلم نور", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

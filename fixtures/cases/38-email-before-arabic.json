@@ -1,0 +1,9 @@
+{
+  "id": "38-email-before-arabic",
+  "description": "A paragraph that starts with an email address. The first strong character is Latin: ltr.",
+  "markdown": "user@example.com هو بريدي الإلكتروني.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "user@", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

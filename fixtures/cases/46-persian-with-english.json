@@ -1,0 +1,10 @@
+{
+  "id": "46-persian-with-english",
+  "description": "Persian sentence with English words inline, and an English sentence with a Persian word. Each follows its first strong character.",
+  "markdown": "من از LangChain و pgvector استفاده می‌کنم.\n\nI use LangChain with سلام in the middle.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "من از", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "I use", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

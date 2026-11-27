@@ -1,0 +1,10 @@
+{
+  "id": "43-code-block-no-language",
+  "description": "A fenced code block without a language, inside Arabic text. Still ltr.",
+  "markdown": "المثال:\n\n```\nls -la\n```\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "المثال", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-block", "match": "ls -la", "expected_dir": "ltr", "expected_attr": "ltr"}
+  ]
+}

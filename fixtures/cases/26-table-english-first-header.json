@@ -1,0 +1,18 @@
+{
+  "id": "26-table-english-first-header",
+  "description": "Table whose first header is English. The table is ltr; the Arabic header and Arabic cells are rtl.",
+  "markdown": "| Name | الاسم | Score |\n|---|---|---|\n| Omar | خضر | 95 |\n| سارة | Sara | ٩٠ |\n",
+  "partial": false,
+  "blocks": [
+    {"type": "table", "match": "Name", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "table-cell", "match": "Name", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "Score", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "Omar", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "خضر", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "95", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "سارة", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "Sara", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "٩٠", "expected_dir": "none", "expected_attr": "auto"}
+  ]
+}

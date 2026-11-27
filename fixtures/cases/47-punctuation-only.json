@@ -1,0 +1,9 @@
+{
+  "id": "47-punctuation-only",
+  "description": "A paragraph with only punctuation has no strong character: none, attr auto.",
+  "markdown": "?!?! ... ,,, ;;\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "?!?!", "expected_dir": "none", "expected_attr": "auto"}
+  ]
+}
