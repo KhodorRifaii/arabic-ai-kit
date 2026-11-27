@@ -1,0 +1,17 @@
+{
+  "name": "bidi-markdown-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Markdown to HTML with correct dir attributes for mixed Arabic and English text (local draft).",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/run.js"
+  },
+  "dependencies": {
+    "markdown-it": "^15.0.3"
+  },
+  "devDependencies": {
+    "parse5": "^8.1.1"
+  }
+}
