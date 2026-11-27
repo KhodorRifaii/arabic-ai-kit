@@ -6,7 +6,8 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "node test/run.js"
+    "test": "node test/run.js",
+    "test:big": "node test/big.js"
   },
   "dependencies": {
     "markdown-it": "^15.0.3"
