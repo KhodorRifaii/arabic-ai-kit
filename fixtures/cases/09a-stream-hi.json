@@ -1,0 +1,15 @@
+{
+  "id": "09a-stream-hi",
+  "description": "Cumulative prefixes of one streamed message that starts with English: \"Hi\", then \"Hi مرحبا\". Both steps are ltr; Arabic arriving later does not flip the block.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "Hi",
+      "blocks": [
+      {"type": "paragraph", "match": "Hi", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "Hi مرحبا",
+      "blocks": [
+      {"type": "paragraph", "match": "Hi", "expected_dir": "ltr", "expected_attr": "auto", "note": "First strong is still Latin; Arabic later does not flip the block."}
+      ] }
+  ]
+}

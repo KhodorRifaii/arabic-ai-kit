@@ -9,7 +9,7 @@ Top level of a case file:
 - `id`: the file name without `.json`.
 - `description`: what the case checks.
 - `partial`: `true` when the input is cut mid-stream, `false` otherwise.
-- `markdown`: the input. Streaming cases with several steps use `chunks` instead: a list of `{ "markdown", "blocks" }` objects, each `markdown` being the text so far. `09-stream-prefixes` also tags each chunk with `stream` (`a` or `b`) because it holds two separate streams.
+- `markdown`: the input. Streaming cases with several steps use `chunks` instead: a list of `{ "markdown", "blocks" }` objects, each `markdown` being the text so far.
 - `blocks`: the blocks to check. Each block has:
   - `type`: `heading`, `paragraph`, `list`, `list-item`, `table`, `table-cell`, `code-block` or `code-span`.
   - `match`: a substring of that block's text (an empty string matches the first block of that type that has no text).
@@ -39,7 +39,8 @@ What the adapter must emit as the `dir` attribute on that element: `auto` (brows
 | `08a-partial-arabic-word` | Stream cut inside an Arabic word: paragraph is already rtl. |
 | `08b-unclosed-code-fence` | Stream cut inside an unclosed code fence: still code, ltr. |
 | `08c-partial-list-item` | Stream cut while a list item is typed: list and item are rtl. |
-| `09-stream-prefixes` | Cumulative prefixes of two messages: `Hi`, `Hi مرحبا` (stay ltr), `1.` (none), `1. مرحبا` (rtl). |
+| `09a-stream-hi` | Cumulative prefixes `Hi`, `Hi مرحبا`: both ltr. |
+| `09b-stream-numbered-list` | Cumulative prefixes `1.` (none), `1. مرحبا` (rtl). |
 | `10-hebrew` | Hebrew heading and paragraph are rtl (second RTL script). |
 | `11-cyrillic` | Cyrillic heading and paragraph are ltr (second LTR script). |
 | `12-neutral-only` | Heading and paragraph with only digits and punctuation: `none`, attr `auto`. |

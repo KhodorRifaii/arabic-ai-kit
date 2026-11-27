@@ -1,0 +1,16 @@
+{
+  "id": "09b-stream-numbered-list",
+  "description": "Cumulative prefixes of one streamed message that starts with a list marker: \"1.\", then \"1. مرحبا\". The first step has no strong character (none, attr auto); the block flips to rtl once Arabic arrives.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "1.",
+      "blocks": [
+      {"type": "list", "match": "", "expected_dir": "none", "expected_attr": "auto", "note": "Empty list item: no strong character yet, so no direction assertion. The match is empty because the item has no text."}
+      ] },
+    { "markdown": "1. مرحبا",
+      "blocks": [
+      {"type": "list", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto", "note": "The block flips from none to rtl once Arabic arrives."},
+      {"type": "list-item", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}
