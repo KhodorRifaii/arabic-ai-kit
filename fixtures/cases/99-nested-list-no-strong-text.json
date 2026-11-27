@@ -1,0 +1,11 @@
+{
+  "id": "99-nested-list-no-strong-text",
+  "description": "Whole list with no strong text: the empty outer item holds a nested list of numbers. Everything is none (auto).",
+  "markdown": "- \n  - 12\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "12", "expected_dir": "none", "expected_attr": "auto", "pick": "outermost"},
+    {"type": "list-item", "match": "", "expected_dir": "none", "expected_attr": "auto", "pick": "outermost"},
+    {"type": "list-item", "match": "12", "expected_dir": "none", "expected_attr": "auto", "pick": "innermost"}
+  ]
+}

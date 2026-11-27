@@ -17,13 +17,18 @@ const esc = (s) => MarkdownIt().utils.escapeHtml(s);
 
 // First strong direction in the container's text (first item, first cell, first paragraph).
 // For a list item, only the item's own text counts (nested lists get their own direction).
+// An item with no strong text of its own that holds a nested list (for example "- " followed by
+// an indented sub-list) takes the direction of the enclosing list: dir="auto" would skip the
+// nested list, find no text and fall back to ltr.
 // Code is skipped because it is always ltr and does not decide the direction.
 function containerDir(tokens, start) {
   const open = tokens[start];
+  let hasNestedList = false;
   for (let i = start + 1; i < tokens.length; i++) {
     const t = tokens[i];
     if (t.type === open.type.replace('_open', '_close') && t.level === open.level) break;
     if (open.type === 'list_item_open' && LIST_OPEN.has(t.type)) {
+      hasNestedList = true;
       while (!(tokens[i].type === t.type.replace('_open', '_close') && tokens[i].level === t.level)) i++;
       continue;
     }
@@ -34,6 +39,11 @@ function containerDir(tokens, start) {
         if (d !== 'none') return d;
       }
     }
+  }
+  if (hasNestedList) {
+    let j = start - 1;
+    while (j >= 0 && !(LIST_OPEN.has(tokens[j].type) && tokens[j].level === open.level - 1)) j--;
+    if (j >= 0) return containerDir(tokens, j);
   }
   return 'auto';
 }

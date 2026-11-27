@@ -1,0 +1,11 @@
+{
+  "id": "97-nested-list-under-neutral-item",
+  "description": "An item whose own text is only a number (neutral) with a nested Arabic list. The item inherits the enclosing list direction (rtl).",
+  "markdown": "- 12\n  - مرحبا\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "12", "expected_dir": "rtl", "expected_attr": "rtl", "pick": "outermost", "note": "Own text has no strong character: inherits the enclosing list."},
+    {"type": "list-item", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "rtl", "pick": "innermost"}
+  ]
+}

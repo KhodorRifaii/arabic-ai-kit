@@ -1,0 +1,12 @@
+{
+  "id": "96-nested-ordered-list-in-first-item",
+  "description": "The first item holds only a nested ordered list (\"- 1. x\"). The enclosing list is ltr and the outer item inherits ltr.",
+  "markdown": "- 1. x\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "x", "expected_dir": "ltr", "expected_attr": "ltr", "pick": "outermost"},
+    {"type": "list-item", "match": "x", "expected_dir": "ltr", "expected_attr": "ltr", "pick": "outermost"},
+    {"type": "list", "match": "x", "expected_dir": "ltr", "expected_attr": "ltr", "pick": "innermost"},
+    {"type": "list-item", "match": "x", "expected_dir": "ltr", "expected_attr": "ltr", "pick": "innermost"}
+  ]
+}

@@ -3,7 +3,7 @@
 import { parseFragment } from 'parse5';
 import { render } from '../src/index.js';
 import { generateDocument } from './generate.js';
-import { elements, text, attr, effective, firstStrong, textNoCode, autoText, checkBlock, TAGS } from './lib.js';
+import { elements, text, attr, effective, firstStrong, textNoCode, expectedItemDir, checkBlock, TAGS } from './lib.js';
 
 let failures = 0;
 const fail = (msg) => { failures++; if (failures <= 40) console.log('  FAIL ' + msg); };
@@ -74,14 +74,6 @@ for (const [k, v] of Object.entries(MESSAGES)) {
 
 const STEP = 20;
 
-// Own text of a list item: text outside nested lists and code (what the adapter uses).
-function ownText(n) {
-  return (n.childNodes ?? []).map((c) => {
-    if (c.nodeName === '#text') return c.value;
-    return ['ul', 'ol', 'pre', 'code'].includes(c.tagName) ? '' : ownText(c);
-  }).join('');
-}
-
 function checkPrefix(name, prefix, len) {
   const els = elements(parseFragment(render(prefix)));
   const label = `stream "${name}" prefix ${len}`;
@@ -101,7 +93,7 @@ function checkPrefix(name, prefix, len) {
       const s = firstStrong(textNoCode(e));
       if (d !== (s === 'none' ? 'auto' : s)) fail(`${label}: <${t}> dir expected ${s === 'none' ? 'auto' : s}, got ${d ?? 'none'}`);
     } else if (t === 'li') {
-      const s = firstStrong(ownText(e));
+      const s = expectedItemDir(e);
       if (d !== (s === 'none' ? 'auto' : s)) fail(`${label}: <li> dir expected ${s === 'none' ? 'auto' : s}, got ${d ?? 'none'}`);
     } else if (t === 'pre') {
       const inner = e.childNodes.find((n) => n.tagName === 'code');

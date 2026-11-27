@@ -1,0 +1,12 @@
+{
+  "id": "98-nested-list-in-empty-item-english-first",
+  "description": "Empty outer item with a nested list that starts English and has an Arabic item. The enclosing list and the outer item are ltr; the Arabic nested item is rtl.",
+  "markdown": "- \n  - Hello\n  - مرحبا\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "Hello", "expected_dir": "ltr", "expected_attr": "ltr", "pick": "outermost"},
+    {"type": "list-item", "match": "", "expected_dir": "ltr", "expected_attr": "ltr", "pick": "outermost"},
+    {"type": "list-item", "match": "Hello", "expected_dir": "ltr", "expected_attr": "ltr", "pick": "innermost"},
+    {"type": "list-item", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "rtl", "pick": "innermost"}
+  ]
+}

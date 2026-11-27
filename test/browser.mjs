@@ -33,8 +33,9 @@ export function pageCheck(jobs) {
     for (const b of j.blocks) {
       let c = [...box.querySelectorAll('*')].filter((e) => TAGS[b.type].includes(e.tagName)
         && e.textContent.includes(b.match) && (b.type !== 'code-span' || !e.closest('pre')));
-      const e = ['list', 'table', 'blockquote'].includes(b.type) ? c[0]
-        : c.reduce((a, x) => (!a || x.textContent.length < a.textContent.length ? x : a), null);
+      const smallest = () => c.reduce((a, x) => (!a || x.textContent.length < a.textContent.length ? x : a), null);
+      const e = b.pick === 'outermost' ? c[0] : b.pick === 'innermost' ? smallest()
+        : ['list', 'table', 'blockquote'].includes(b.type) ? c[0] : smallest();
       const label = `${j.file}[${j.step}] ${b.type} "${b.match.slice(0, 20)}"`;
       if (!e) { out.push(`${label}: element not found`); continue; }
       const got = getComputedStyle(e).direction;

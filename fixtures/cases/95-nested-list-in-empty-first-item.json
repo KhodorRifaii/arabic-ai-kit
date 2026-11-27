@@ -1,0 +1,11 @@
+{
+  "id": "95-nested-list-in-empty-first-item",
+  "description": "An item with no text of its own that holds only a nested list. The enclosing list is rtl (the nested item is Arabic), and the empty outer item takes that direction instead of auto: dir=\"auto\" would skip the nested list and compute ltr.",
+  "markdown": "- \n  - مرحبا\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "", "expected_dir": "rtl", "expected_attr": "rtl", "pick": "outermost", "note": "Own text is empty: inherits the enclosing list."},
+    {"type": "list-item", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "rtl"}
+  ]
+}

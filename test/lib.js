@@ -32,6 +32,25 @@ export const textNoCode = (n) => (n.childNodes ?? []).map((c) => {
   return ['pre', 'code'].includes(c.tagName) ? '' : textNoCode(c);
 }).join('');
 
+// A list item's own text: no code, no nested lists (mirrors the adapter's containerDir).
+export const ownText = (n) => (n.childNodes ?? []).map((c) => {
+  if (c.nodeName === '#text') return c.value;
+  return ['ul', 'ol', 'pre', 'code'].includes(c.tagName) ? '' : ownText(c);
+}).join('');
+
+const hasNestedList = (n) => (n.childNodes ?? []).some((c) => ['ul', 'ol'].includes(c.tagName) || hasNestedList(c));
+
+/**
+ * Direction an li must have by the rule: its own text decides; with no strong character of its own
+ * and a nested list inside, it takes the enclosing list's direction; otherwise none.
+ */
+export function expectedItemDir(li) {
+  const own = firstStrong(ownText(li));
+  if (own !== 'none') return own;
+  if (hasNestedList(li) && li.up && ['ul', 'ol'].includes(li.up.tagName)) return firstStrong(textNoCode(li.up));
+  return 'none';
+}
+
 // Direction a browser uses for this element, following the spec.
 export function effective(n) {
   const d = attr(n, 'dir');
@@ -46,7 +65,10 @@ export function find(els, b) {
   const c = els.filter((e) => TAGS[b.type].includes(e.tagName) && text(e).includes(b.match)
     && (b.type !== 'code-span' || !ancestors(e).some((p) => p.tagName === 'pre')));
   if (!c.length) return null;
-  return ['list', 'table', 'blockquote'].includes(b.type) ? c[0] : c.reduce((a, e) => (text(e).length < text(a).length ? e : a));
+  const smallest = () => c.reduce((a, e) => (text(e).length < text(a).length ? e : a));
+  if (b.pick === 'outermost') return c[0]; // first in document order contains the others
+  if (b.pick === 'innermost') return smallest();
+  return ['list', 'table', 'blockquote'].includes(b.type) ? c[0] : smallest();
 }
 
 /** Checks one block's element against expected_dir / expected_attr. Returns a list of error strings. */
@@ -61,6 +83,9 @@ export function checkBlock(e, b, label) {
     if (!inner) errs.push(`${label}: no inner code element`);
     else if (attr(inner, 'dir') !== 'ltr') errs.push(`${label}: inner code dir expected ltr, got ${attr(inner, 'dir') ?? 'none'}`);
   }
-  if (!isCode && b.expected_dir !== firstStrong(textNoCode(e))) errs.push(`${label}: expected_dir ${b.expected_dir} disagrees with first-strong ${firstStrong(textNoCode(e))}`);
+  if (b.type === 'list-item') {
+    const want = expectedItemDir(e);
+    if (b.expected_dir !== want) errs.push(`${label}: expected_dir ${b.expected_dir} disagrees with the list-item rule (${want})`);
+  } else if (!isCode && b.expected_dir !== firstStrong(textNoCode(e))) errs.push(`${label}: expected_dir ${b.expected_dir} disagrees with first-strong ${firstStrong(textNoCode(e))}`);
   return errs;
 }

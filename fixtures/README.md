@@ -15,6 +15,7 @@ Top level of a case file:
   - `match`: a substring of that block's text (an empty string matches the first block of that type that has no text).
   - `expected_dir`: `rtl`, `ltr` or `none`.
   - `expected_attr`: `auto`, `rtl` or `ltr`.
+  - `pick`: optional, `outermost` or `innermost`, to choose between nested blocks that contain the same text (default: the smallest block, or the first list, table or blockquote).
   - `note`: optional explanation.
 
 ### expected_dir
@@ -23,7 +24,7 @@ The first character with a Unicode strong bidi class decides: strong R/AL (Arabi
 
 ### expected_attr
 
-What the adapter must emit as the `dir` attribute on that element: `auto` (browser decides) or a fixed `rtl`/`ltr`. Paragraphs, headings and table cells use `auto`; lists (`ul`, `ol`), list items (`li`), blockquotes and tables use a fixed `rtl` or `ltr` equal to `expected_dir` (the browser's `auto` skips descendants with their own `dir`, so an `auto` container, or an `li` whose text sits in a `p` in a loose list, would compute ltr), or `auto` when `expected_dir` is `none`; `pre` and `code` use `ltr` (for a code block, both the `pre` and its inner `code` element must carry `dir="ltr"`); a `none` block uses `auto`. Checked for every block, including `none` blocks, independently of `expected_dir`.
+What the adapter must emit as the `dir` attribute on that element: `auto` (browser decides) or a fixed `rtl`/`ltr`. Paragraphs, headings and table cells use `auto`; lists (`ul`, `ol`), list items (`li`), blockquotes and tables use a fixed `rtl` or `ltr` equal to `expected_dir` (the browser's `auto` skips descendants with their own `dir`, so an `auto` container, or an `li` whose text sits in a `p` in a loose list, would compute ltr), or `auto` when `expected_dir` is `none`. A list item with no strong text of its own that holds a nested list takes the enclosing list's direction (cases 95 to 100); `pre` and `code` use `ltr` (for a code block, both the `pre` and its inner `code` element must carry `dir="ltr"`); a `none` block uses `auto`. Checked for every block, including `none` blocks, independently of `expected_dir`.
 
 ## Cases
 
@@ -126,6 +127,12 @@ What the adapter must emit as the `dir` attribute on that element: `auto` (brows
 | `92-stream-heading-with-code` | Stream: heading gets inline code, then Arabic. |
 | `93-stream-arabic-then-code-fence` | Stream: Arabic paragraph then a code fence. |
 | `94-stream-ordered-item-starting-with-code` | Stream: ordered item starting with code flips to rtl. |
+| `95-nested-list-in-empty-first-item` | Empty first item holding only a nested Arabic list: the item inherits rtl. |
+| `96-nested-ordered-list-in-first-item` | `- 1. x`: outer item inherits ltr from the nested ordered list. |
+| `97-nested-list-under-neutral-item` | Item with only a number and a nested Arabic list: inherits rtl. |
+| `98-nested-list-in-empty-item-english-first` | Empty outer item, nested list English then Arabic: outer ltr, Arabic nested item rtl. |
+| `99-nested-list-no-strong-text` | Whole list without strong text: everything none (auto). |
+| `100-stream-nested-list-in-empty-item` | Stream: empty item gets a nested Arabic item, none then rtl. |
 
 ## Notes
 

@@ -1,0 +1,24 @@
+{
+  "id": "100-stream-nested-list-in-empty-item",
+  "description": "Stream of an empty first item that gets a nested Arabic item. While there is no strong text everything is none (auto); once Arabic arrives the list and the outer item become rtl.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "- ",
+      "blocks": [
+        {"type": "list", "match": "", "expected_dir": "none", "expected_attr": "auto"},
+        {"type": "list-item", "match": "", "expected_dir": "none", "expected_attr": "auto"}
+      ] },
+    { "markdown": "- \n  - مر",
+      "blocks": [
+        {"type": "list", "match": "مر", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "list-item", "match": "", "expected_dir": "rtl", "expected_attr": "rtl", "pick": "outermost"},
+        {"type": "list-item", "match": "مر", "expected_dir": "rtl", "expected_attr": "rtl", "pick": "innermost"}
+      ] },
+    { "markdown": "- \n  - مرحبا\n- Next",
+      "blocks": [
+        {"type": "list", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "list-item", "match": "", "expected_dir": "rtl", "expected_attr": "rtl", "pick": "outermost"},
+        {"type": "list-item", "match": "Next", "expected_dir": "ltr", "expected_attr": "ltr"}
+      ] }
+  ]
+}
