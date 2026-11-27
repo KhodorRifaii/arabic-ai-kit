@@ -4,7 +4,7 @@
   "markdown": "# مرحبا بكم في المساعد\n\nاسمي خضر وأنا مهندس ذكاء اصطناعي. نحكي بالعربي كل يوم.\n",
   "partial": false,
   "blocks": [
-    { "type": "heading", "match": "مرحبا بكم في المساعد", "expected_dir": "rtl" },
-    { "type": "paragraph", "match": "اسمي خضر", "expected_dir": "rtl" }
+    {"type": "heading", "match": "مرحبا بكم في المساعد", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "اسمي خضر", "expected_dir": "rtl", "expected_attr": "auto"}
   ]
 }

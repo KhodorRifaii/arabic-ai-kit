@@ -1,0 +1,9 @@
+{
+  "id": "08b-unclosed-code-fence",
+  "description": "Stream cut inside a fenced code block that is not closed yet. It is still code, so it is ltr (the kit must force ltr on pre and code), even though Arabic has started inside it.",
+  "markdown": "```python\nprint(\"مر",
+  "partial": true,
+  "blocks": [
+    {"type": "code-block", "match": "print(", "expected_dir": "ltr", "expected_attr": "ltr", "note": "Fence not closed yet; still code."}
+  ]
+}

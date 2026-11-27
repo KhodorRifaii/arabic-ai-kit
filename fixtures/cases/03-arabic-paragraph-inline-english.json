@@ -4,6 +4,6 @@
   "markdown": "اسمي Khodor و أنا أعمل على AI engineering، وأستخدم LangChain مع Gemini API للبحث في الملفات.\n",
   "partial": false,
   "blocks": [
-    { "type": "paragraph", "match": "اسمي Khodor", "expected_dir": "rtl" }
+    {"type": "paragraph", "match": "اسمي Khodor", "expected_dir": "rtl", "expected_attr": "auto"}
   ]
 }

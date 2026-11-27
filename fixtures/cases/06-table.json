@@ -1,16 +1,17 @@
 {
   "id": "06-table",
-  "description": "GFM table with Arabic headers, mixed cells. Header and each cell follow its own first strong character. The table element is set to auto in the reference style.",
+  "description": "GFM table with Arabic and English headers and cells. The table itself is rtl (first header is Arabic); each header and cell follows its own first strong character. All table, th and td elements must carry dir=\"auto\".",
   "markdown": "| الاسم | Role | الخبرة |\n|---|---|---|\n| خضر | AI Engineer | سنتين |\n| Ali | Backend | 3 years |\n",
   "partial": false,
   "blocks": [
-    { "type": "table-cell", "match": "الاسم", "expected_dir": "rtl" },
-    { "type": "table-cell", "match": "Role", "expected_dir": "ltr" },
-    { "type": "table-cell", "match": "الخبرة", "expected_dir": "rtl" },
-    { "type": "table-cell", "match": "خضر", "expected_dir": "rtl" },
-    { "type": "table-cell", "match": "AI Engineer", "expected_dir": "ltr" },
-    { "type": "table-cell", "match": "سنتين", "expected_dir": "rtl" },
-    { "type": "table-cell", "match": "Ali", "expected_dir": "ltr" },
-    { "type": "table-cell", "match": "3 years", "expected_dir": "ltr" }
+    {"type": "table", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto", "note": "Table-level block: first header is Arabic."},
+    {"type": "table-cell", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "Role", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "الخبرة", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "خضر", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "AI Engineer", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "سنتين", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "Ali", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "3 years", "expected_dir": "ltr", "expected_attr": "auto"}
   ]
 }

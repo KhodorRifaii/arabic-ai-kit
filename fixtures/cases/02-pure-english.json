@@ -4,7 +4,7 @@
   "markdown": "# Setting up the RAG pipeline\n\nWe chunk the documents, embed them, and store the vectors in pgvector.\n",
   "partial": false,
   "blocks": [
-    { "type": "heading", "match": "Setting up the RAG pipeline", "expected_dir": "ltr" },
-    { "type": "paragraph", "match": "We chunk the documents", "expected_dir": "ltr" }
+    {"type": "heading", "match": "Setting up the RAG pipeline", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "We chunk the documents", "expected_dir": "ltr", "expected_attr": "auto"}
   ]
 }

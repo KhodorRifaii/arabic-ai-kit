@@ -4,6 +4,6 @@
   "markdown": "The bot greets every user with مرحبا first, then answers in English with citations.\n",
   "partial": false,
   "blocks": [
-    { "type": "paragraph", "match": "The bot greets every user", "expected_dir": "ltr" }
+    {"type": "paragraph", "match": "The bot greets every user", "expected_dir": "ltr", "expected_attr": "auto"}
   ]
 }

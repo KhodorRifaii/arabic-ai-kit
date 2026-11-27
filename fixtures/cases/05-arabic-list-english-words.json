@@ -1,12 +1,12 @@
 {
   "id": "05-arabic-list-english-words",
-  "description": "Arabic bullet list where some items contain English words. Each item starts with Arabic, so each li is rtl. The list itself is rtl because its first item is Arabic.",
+  "description": "Arabic bullet list where one item starts with English. The list is rtl because its first item is Arabic. Items 1 and 2 start with Arabic (rtl); item 3 starts with English, so it is ltr. The reference packages emit no dir on li, so the kit must set dir=\"auto\" on every li, or item 3 inherits the list direction.",
   "markdown": "- عنصر أول with English words\n- الخطوة الثانية: deploy على Render\n- item three بالعربي بعده\n",
   "partial": false,
   "blocks": [
-    { "type": "list", "match": "عنصر أول", "expected_dir": "rtl" },
-    { "type": "list-item", "match": "عنصر أول with English words", "expected_dir": "rtl" },
-    { "type": "list-item", "match": "الخطوة الثانية", "expected_dir": "rtl" },
-    { "type": "list-item", "match": "item three", "expected_dir": "ltr", "note": "Starts with English, so ltr. Arabic words follow inside it." }
+    {"type": "list", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "عنصر أول with English words", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "الخطوة الثانية", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "item three", "expected_dir": "ltr", "expected_attr": "auto", "note": "Starts with English, so ltr. The kit must set dir on li; without it the item inherits rtl from the list."}
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "id": "08c-partial-list-item",
+  "description": "Stream cut while a list item is being typed. The item starts with Arabic, so the list and the item are rtl. The kit must set dir on li.",
+  "markdown": "- عنصر أول with Eng",
+  "partial": true,
+  "blocks": [
+    {"type": "list", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "عنصر أول", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

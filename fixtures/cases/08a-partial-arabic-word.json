@@ -1,0 +1,9 @@
+{
+  "id": "08a-partial-arabic-word",
+  "description": "Stream cut in the middle of an Arabic word. The paragraph already has a strong Arabic character, so it is rtl.",
+  "markdown": "مرحبا، أنا أعمل على ال",
+  "partial": true,
+  "blocks": [
+    {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

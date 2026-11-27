@@ -1,0 +1,10 @@
+{
+  "id": "11-cyrillic",
+  "description": "Cyrillic is a second LTR script. Heading and paragraph start with Cyrillic letters, so both are ltr; the Arabic word inside does not change that.",
+  "markdown": "# Добро пожаловать\n\nМы строим RAG и храним векторы в pgvector, а слово مرحبا стоит внутри.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "Добро пожаловать", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "Мы строим", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

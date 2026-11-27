@@ -1,0 +1,10 @@
+{
+  "id": "10-hebrew",
+  "description": "Hebrew is a second RTL script. Heading and paragraph start with Hebrew letters, so both are rtl.",
+  "markdown": "# שלום וברוכים הבאים\n\nאני מפתח ועובד על RAG ו-pgvector כל יום.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "שלום וברוכים", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "אני מפתח", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "12-neutral-only",
+  "description": "Blocks with no strong character (digits, punctuation, spaces). expected_dir is none, so the case makes no direction assertion; the adapter must still emit dir=\"auto\" and the browser decides.",
+  "markdown": "# 2026\n\n12 - 34 / 56 !!!\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "2026", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "12 - 34", "expected_dir": "none", "expected_attr": "auto"}
+  ]
+}
