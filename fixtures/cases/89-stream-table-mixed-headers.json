@@ -1,0 +1,23 @@
+{
+  "id": "89-stream-table-mixed-headers",
+  "description": "Stream of a table with an English first header: a paragraph first (ltr), then a table (ltr) with an Arabic header (rtl), then cells.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "| Name | الاسم |",
+      "blocks": [
+        {"type": "paragraph", "match": "Name", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "| Name | الاسم |\n|---|---|",
+      "blocks": [
+        {"type": "table", "match": "Name", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "table-cell", "match": "Name", "expected_dir": "ltr", "expected_attr": "auto"},
+        {"type": "table-cell", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "| Name | الاسم |\n|---|---|\n| Omar | عمر |",
+      "blocks": [
+        {"type": "table", "match": "Name", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "table-cell", "match": "Omar", "expected_dir": "ltr", "expected_attr": "auto"},
+        {"type": "table-cell", "match": "عمر", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

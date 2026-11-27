@@ -1,0 +1,19 @@
+{
+  "id": "88-stream-arabic-link",
+  "description": "Stream of an Arabic link being typed. Unfinished link syntax is literal text; the paragraph is rtl at every step.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "[الموق",
+      "blocks": [
+        {"type": "paragraph", "match": "الموق", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "[الموقع](https://exa",
+      "blocks": [
+        {"type": "paragraph", "match": "الموقع", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "[الموقع](https://example.com) هنا",
+      "blocks": [
+        {"type": "paragraph", "match": "الموقع", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

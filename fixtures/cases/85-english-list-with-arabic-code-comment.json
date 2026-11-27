@@ -1,0 +1,12 @@
+{
+  "id": "85-english-list-with-arabic-code-comment",
+  "description": "English list item with an inline code span holding Arabic. List and items are ltr; code stays ltr.",
+  "markdown": "- Run `echo مرحبا` in the shell\n- Check the output\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "Run", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "Run", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "code-span", "match": "echo", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "Check", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

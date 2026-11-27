@@ -1,0 +1,9 @@
+{
+  "id": "79-english-with-bold-arabic-first-word",
+  "description": "English paragraph that starts with a bold English word and has Arabic after it: ltr.",
+  "markdown": "**Note:** هذه ملاحظة مهمة.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "Note", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

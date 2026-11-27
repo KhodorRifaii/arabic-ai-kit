@@ -1,0 +1,12 @@
+{
+  "id": "76-quotes-and-brackets-at-start",
+  "description": "Paragraphs that start with quotation marks or brackets. Punctuation is neutral, so each paragraph follows its first letter.",
+  "markdown": "«مرحبا» قال أحمد.\n\n\"Hello\" قال أحمد.\n\n(مرحبا) hello there\n\n(Hello) مرحبا بك\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "قال أحمد.", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "\"Hello\"", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "(مرحبا)", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "(Hello)", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

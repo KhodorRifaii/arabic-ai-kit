@@ -1,0 +1,9 @@
+{
+  "id": "75-warning-emoji-then-english",
+  "description": "A paragraph that starts with a warning emoji, then English, then Arabic: ltr.",
+  "markdown": "⚠️ Warning: هذا الأمر يحذف الملفات\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "Warning", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

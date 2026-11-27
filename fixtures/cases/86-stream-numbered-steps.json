@@ -1,0 +1,22 @@
+{
+  "id": "86-stream-numbered-steps",
+  "description": "Stream of Arabic numbered steps with a command and then an English item. List and first item are rtl throughout; the English item is ltr.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "1. شغّل",
+      "blocks": [
+        {"type": "list", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "1. شغّل `npm install`",
+      "blocks": [
+        {"type": "list", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "1. شغّل `npm install`\n2. Then run",
+      "blocks": [
+        {"type": "list", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "list-item", "match": "Then run", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] }
+  ]
+}

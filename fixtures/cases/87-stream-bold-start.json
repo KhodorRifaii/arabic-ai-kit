@@ -1,0 +1,19 @@
+{
+  "id": "87-stream-bold-start",
+  "description": "Stream of an Arabic paragraph that starts with bold. An unclosed marker is literal text and the Arabic letters decide: rtl once they arrive.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "**",
+      "blocks": [
+        {"type": "paragraph", "match": "**", "expected_dir": "none", "expected_attr": "auto"}
+      ] },
+    { "markdown": "**مهم",
+      "blocks": [
+        {"type": "paragraph", "match": "مهم", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "**مهم:** هذا نص",
+      "blocks": [
+        {"type": "paragraph", "match": "مهم", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

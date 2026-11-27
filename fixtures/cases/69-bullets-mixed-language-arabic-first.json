@@ -1,0 +1,13 @@
+{
+  "id": "69-bullets-mixed-language-arabic-first",
+  "description": "Bullet list that alternates Arabic and English items, starting with Arabic. The list is rtl; each item follows its own first strong character.",
+  "markdown": "- تفاح\n- Apples\n- موز\n- Bananas\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "تفاح", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "تفاح", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "Apples", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "list-item", "match": "موز", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "Bananas", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

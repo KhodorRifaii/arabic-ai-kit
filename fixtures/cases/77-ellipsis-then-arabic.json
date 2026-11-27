@@ -1,0 +1,10 @@
+{
+  "id": "77-ellipsis-then-arabic",
+  "description": "A paragraph that starts with an ellipsis and then Arabic: rtl. The next one starts with an ellipsis and English: ltr.",
+  "markdown": "... وبعدها نكمل الشرح\n\n... and then we continue\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "وبعدها", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "and then", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

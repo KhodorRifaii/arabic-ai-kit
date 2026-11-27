@@ -1,0 +1,15 @@
+{
+  "id": "71-table-code-cells",
+  "description": "Table with code in a cell. A cell that holds only code has no strong character outside the code, so it is none (auto); the Arabic cells are rtl. The table follows the first header (Arabic).",
+  "markdown": "| الأمر | الوصف |\n|---|---|\n| `ls` | عرض الملفات |\n| `pwd` | المسار الحالي |\n",
+  "partial": false,
+  "blocks": [
+    {"type": "table", "match": "الأمر", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "table-cell", "match": "الأمر", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "الوصف", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "ls", "expected_dir": "none", "expected_attr": "auto", "note": "Only code: no strong character outside the code."},
+    {"type": "table-cell", "match": "عرض الملفات", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "pwd", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "المسار", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

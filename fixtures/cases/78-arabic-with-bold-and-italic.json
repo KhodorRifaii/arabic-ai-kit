@@ -1,0 +1,9 @@
+{
+  "id": "78-arabic-with-bold-and-italic",
+  "description": "Arabic paragraph with bold and italic runs, some in English. The first strong character is Arabic, so the paragraph is rtl.",
+  "markdown": "**مهم:** هذا *نص مائل* و **bold English** داخل الجملة.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "مهم", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

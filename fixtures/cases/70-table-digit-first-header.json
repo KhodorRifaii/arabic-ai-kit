@@ -1,0 +1,15 @@
+{
+  "id": "70-table-digit-first-header",
+  "description": "Table whose first header is a digit (neutral). The first strong character in the table is Arabic, so the table is rtl. The digit header and the digit cells are none.",
+  "markdown": "| 1 | الاسم | Role |\n|---|---|---|\n| 2 | عمر | Engineer |\n",
+  "partial": false,
+  "blocks": [
+    {"type": "table", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "table-cell", "match": "1", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "الاسم", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "Role", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "2", "expected_dir": "none", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "عمر", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "table-cell", "match": "Engineer", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "94-stream-ordered-item-starting-with-code",
+  "description": "Stream of an ordered item that starts with inline code: while the backtick is unclosed the item is literal text (ltr); once the code closes and Arabic follows, the list flips to rtl.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "1. `npm",
+      "blocks": [
+        {"type": "list", "match": "npm", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "list-item", "match": "npm", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "1. `npm install` ثم",
+      "blocks": [
+        {"type": "list", "match": "ثم", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "list-item", "match": "ثم", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "92-stream-heading-with-code",
+  "description": "Stream of a heading that gets inline code: while the backtick is unclosed it is literal text (ltr); once closed, the code is skipped and the Arabic word decides (rtl).",
+  "partial": true,
+  "chunks": [
+    { "markdown": "## `fet",
+      "blocks": [
+        {"type": "heading", "match": "fet", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "## `fetch`",
+      "blocks": [
+        {"type": "heading", "match": "fetch", "expected_dir": "none", "expected_attr": "auto", "note": "Only code: no strong character outside the code."}
+      ] },
+    { "markdown": "## `fetch` في",
+      "blocks": [
+        {"type": "heading", "match": "في", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "74-emoji-check-then-arabic",
+  "description": "A paragraph that starts with a check-mark emoji and then Arabic: the emoji is neutral, so rtl.",
+  "markdown": "✅ تم حفظ الملف بنجاح\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "تم حفظ", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

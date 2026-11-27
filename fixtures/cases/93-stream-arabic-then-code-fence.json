@@ -1,0 +1,21 @@
+{
+  "id": "93-stream-arabic-then-code-fence",
+  "description": "Stream of an Arabic paragraph followed by a code fence being typed. The paragraph is rtl; the code is ltr as soon as the fence opens.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "جرب هذا:",
+      "blocks": [
+        {"type": "paragraph", "match": "جرب", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "جرب هذا:\n\n```js",
+      "blocks": [
+        {"type": "paragraph", "match": "جرب", "expected_dir": "rtl", "expected_attr": "auto"},
+        {"type": "code-block", "match": "", "expected_dir": "ltr", "expected_attr": "ltr"}
+      ] },
+    { "markdown": "جرب هذا:\n\n```js\nconsole.log('مر",
+      "blocks": [
+        {"type": "paragraph", "match": "جرب", "expected_dir": "rtl", "expected_attr": "auto"},
+        {"type": "code-block", "match": "console.log", "expected_dir": "ltr", "expected_attr": "ltr"}
+      ] }
+  ]
+}

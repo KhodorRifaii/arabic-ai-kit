@@ -1,0 +1,9 @@
+{
+  "id": "80-arabic-link-text-in-arabic",
+  "description": "Arabic paragraph that starts with a link whose text is Arabic: rtl.",
+  "markdown": "[الموقع الرسمي](https://example.com) للمشروع.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "الموقع الرسمي", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

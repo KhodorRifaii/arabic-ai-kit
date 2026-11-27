@@ -1,0 +1,17 @@
+{
+  "id": "62-chat-reply-arabic-steps-and-error",
+  "description": "A realistic Arabic chat reply: intro, numbered steps with inline commands, an error message in a code block, a closing Arabic paragraph and an English last line. Prose and lists are rtl, code is ltr, the last line is ltr.",
+  "markdown": "مرحبا! إليك الخطوات لتشغيل المشروع:\n\n1. ثبّت الحزم باستخدام `npm install`\n2. شغّل الخادم: `npm run dev`\n\nإذا ظهر الخطأ التالي:\n\n```\nError: Cannot find module 'express'\n```\n\nجرب `npm install express` ثم أعد التشغيل.\n\nLet me know if it works!\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "مرحبا", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list", "match": "ثبّت", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "ثبّت", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-span", "match": "npm run dev", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "paragraph", "match": "إذا ظهر", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-block", "match": "Cannot find module", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "paragraph", "match": "جرب", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "Let me know", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

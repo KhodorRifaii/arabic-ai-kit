@@ -1,0 +1,16 @@
+{
+  "id": "65-numbered-steps-arabic-english-commands",
+  "description": "Numbered Arabic steps, each with an English command in code. The list and items are rtl; the code spans are ltr.",
+  "markdown": "1. افتح الطرفية\n2. شغّل `git clone https://example.com/repo.git`\n3. ثم `cd repo`\n4. وأخيرا `npm test`\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "افتح الطرفية", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "افتح", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "ثم", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "وأخيرا", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-span", "match": "git clone", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "code-span", "match": "cd repo", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "code-span", "match": "npm test", "expected_dir": "ltr", "expected_attr": "ltr"}
+  ]
+}

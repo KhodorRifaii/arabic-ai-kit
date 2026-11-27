@@ -1,0 +1,11 @@
+{
+  "id": "72-blockquote-arabic-english-attribution",
+  "description": "Arabic quote with an English attribution line in the same blockquote. The blockquote follows its first paragraph (rtl); the attribution paragraph is ltr.",
+  "markdown": "> العلم نور والجهل ظلام.\n>\n> — Einstein\n",
+  "partial": false,
+  "blocks": [
+    {"type": "blockquote", "match": "العلم نور", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "paragraph", "match": "العلم نور", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "Einstein", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "81-arabic-link-text-in-english-sentence",
+  "description": "English sentence with an Arabic link text in the middle: ltr.",
+  "markdown": "Read [الدليل](https://example.com/guide) first.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "Read", "expected_dir": "ltr", "expected_attr": "auto"}
+  ]
+}

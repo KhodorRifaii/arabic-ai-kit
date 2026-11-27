@@ -1,0 +1,11 @@
+{
+  "id": "83-headings-with-inline-code",
+  "description": "Headings that contain inline code. Code is skipped for the direction: the Arabic heading is rtl, and the English heading is ltr.",
+  "markdown": "## استخدام `fetch` في JavaScript\n\n## `fetch` usage in JavaScript\n\n## `fetch` في المتصفح\n",
+  "partial": false,
+  "blocks": [
+    {"type": "heading", "match": "استخدام", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "heading", "match": "usage in", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "heading", "match": "المتصفح", "expected_dir": "rtl", "expected_attr": "auto", "note": "The code at the start is ignored."}
+  ]
+}

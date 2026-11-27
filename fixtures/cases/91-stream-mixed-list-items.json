@@ -1,0 +1,23 @@
+{
+  "id": "91-stream-mixed-list-items",
+  "description": "Stream of a bullet list that starts English and gets Arabic and English items. The list stays ltr; each item follows its own text.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "- Apples",
+      "blocks": [
+        {"type": "list", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "list-item", "match": "Apples", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] },
+    { "markdown": "- Apples\n- تف",
+      "blocks": [
+        {"type": "list", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "list-item", "match": "تف", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "- Apples\n- تفاح\n- Ba",
+      "blocks": [
+        {"type": "list", "match": "Apples", "expected_dir": "ltr", "expected_attr": "ltr"},
+        {"type": "list-item", "match": "تفاح", "expected_dir": "rtl", "expected_attr": "auto"},
+        {"type": "list-item", "match": "Ba", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] }
+  ]
+}

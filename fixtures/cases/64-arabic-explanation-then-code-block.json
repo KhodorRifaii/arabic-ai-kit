@@ -1,0 +1,11 @@
+{
+  "id": "64-arabic-explanation-then-code-block",
+  "description": "Arabic explanation followed by a JavaScript code block that contains an Arabic string, then an Arabic note. Code stays ltr.",
+  "markdown": "استخدم الدالة التالية:\n\n```js\nfunction greet(name) {\n  return `مرحبا ${name}`;\n}\n```\n\nهذه الدالة ترجع تحية بالعربي.\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "استخدم الدالة", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-block", "match": "function greet", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "paragraph", "match": "هذه الدالة", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

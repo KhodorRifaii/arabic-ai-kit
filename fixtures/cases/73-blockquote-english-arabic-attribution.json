@@ -1,0 +1,11 @@
+{
+  "id": "73-blockquote-english-arabic-attribution",
+  "description": "English quote with an Arabic attribution line. The blockquote is ltr; the attribution paragraph is rtl.",
+  "markdown": "> Knowledge is power.\n>\n> — أينشتاين\n",
+  "partial": false,
+  "blocks": [
+    {"type": "blockquote", "match": "Knowledge is", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "paragraph", "match": "Knowledge is", "expected_dir": "ltr", "expected_attr": "auto"},
+    {"type": "paragraph", "match": "أينشتاين", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

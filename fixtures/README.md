@@ -93,6 +93,39 @@ What the adapter must emit as the `dir` attribute on that element: `auto` (brows
 | `59-stream-emoji-then-arabic` | Stream: emoji (none), then Arabic (rtl). |
 | `60-strong-rtl-symbol-first` | Rial sign (U+FDFC) first: a strong RTL symbol that is not a letter, so rtl. |
 | `61-arabic-question-mark-first` | Arabic question mark (U+061F) first, English after: rtl. |
+| `62-chat-reply-arabic-steps-and-error` | Realistic Arabic chat reply: steps with commands, error in a code block, English last line. |
+| `63-arabic-question-about-code` | Arabic question with inline code. |
+| `64-arabic-explanation-then-code-block` | Arabic explanation, JavaScript block with an Arabic string, Arabic note. |
+| `65-numbered-steps-arabic-english-commands` | Numbered Arabic steps with English commands in code. |
+| `66-numbered-steps-english-arabic-notes` | Numbered English steps with Arabic notes. |
+| `67-numbered-steps-command-first` | Steps starting with inline code then Arabic: code is ignored, so rtl. |
+| `68-bullets-mixed-language-english-first` | Bullet list alternating languages, English first. |
+| `69-bullets-mixed-language-arabic-first` | Bullet list alternating languages, Arabic first. |
+| `70-table-digit-first-header` | Table with a digit first header: rtl from the first Arabic header, digit cells none. |
+| `71-table-code-cells` | Table with code cells: code-only cell is none. |
+| `72-blockquote-arabic-english-attribution` | Arabic blockquote with an English attribution paragraph. |
+| `73-blockquote-english-arabic-attribution` | English blockquote with an Arabic attribution paragraph. |
+| `74-emoji-check-then-arabic` | Check-mark emoji then Arabic: rtl. |
+| `75-warning-emoji-then-english` | Warning emoji then English: ltr. |
+| `76-quotes-and-brackets-at-start` | Quotation marks and brackets at the start are neutral. |
+| `77-ellipsis-then-arabic` | Ellipsis at the start is neutral. |
+| `78-arabic-with-bold-and-italic` | Arabic with bold and italic runs: rtl. |
+| `79-english-with-bold-arabic-first-word` | Bold English word first, Arabic after: ltr. |
+| `80-arabic-link-text-in-arabic` | Arabic link text at the start: rtl. |
+| `81-arabic-link-text-in-english-sentence` | Arabic link text inside an English sentence: ltr. |
+| `82-list-with-bold-and-links-arabic` | Arabic list items with bold labels and links. |
+| `83-headings-with-inline-code` | Headings with inline code: code is ignored for the direction. |
+| `84-loose-ordered-list-with-code-block` | Loose Arabic ordered list with a code block. Known failing: the adapter output has li dir="auto" containing p dir="auto", so li computes ltr (see report). |
+| `85-english-list-with-arabic-code-comment` | English list item with an inline code span holding Arabic. |
+| `86-stream-numbered-steps` | Stream: Arabic numbered steps with a command, then an English item. |
+| `87-stream-bold-start` | Stream: bold marker typed before Arabic. |
+| `88-stream-arabic-link` | Stream: Arabic link being typed. |
+| `89-stream-table-mixed-headers` | Stream: table with an English first header. |
+| `90-stream-blockquote-attribution` | Stream: Arabic blockquote gets an English attribution. |
+| `91-stream-mixed-list-items` | Stream: bullet list gets Arabic and English items. |
+| `92-stream-heading-with-code` | Stream: heading gets inline code, then Arabic. |
+| `93-stream-arabic-then-code-fence` | Stream: Arabic paragraph then a code fence. |
+| `94-stream-ordered-item-starting-with-code` | Stream: ordered item starting with code flips to rtl. |
 
 ## Notes
 

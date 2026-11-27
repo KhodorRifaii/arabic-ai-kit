@@ -1,0 +1,12 @@
+{
+  "id": "84-loose-ordered-list-with-code-block",
+  "description": "Loose Arabic ordered list with a code block inside the first item. List and items are rtl; the code block is ltr.",
+  "markdown": "1. شغّل الأمر التالي:\n\n   ```bash\n   npm test\n   ```\n\n2. تأكد من النتيجة\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "شغّل", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-block", "match": "npm test", "expected_dir": "ltr", "expected_attr": "ltr"},
+    {"type": "list-item", "match": "تأكد", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

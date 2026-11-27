@@ -1,0 +1,11 @@
+{
+  "id": "82-list-with-bold-and-links-arabic",
+  "description": "Arabic list items with bold labels and Arabic link text. List and items are rtl.",
+  "markdown": "- **الخطوة 1:** افتح [الصفحة](https://example.com)\n- **الخطوة 2:** اضغط على [Download](https://example.com/dl)\n",
+  "partial": false,
+  "blocks": [
+    {"type": "list", "match": "الخطوة 1", "expected_dir": "rtl", "expected_attr": "rtl"},
+    {"type": "list-item", "match": "الخطوة 1", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "list-item", "match": "الخطوة 2", "expected_dir": "rtl", "expected_attr": "auto"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "63-arabic-question-about-code",
+  "description": "An Arabic question with inline code. The paragraph is rtl; the code span is ltr.",
+  "markdown": "كيف أستخدم `useEffect` في React؟\n",
+  "partial": false,
+  "blocks": [
+    {"type": "paragraph", "match": "كيف أستخدم", "expected_dir": "rtl", "expected_attr": "auto"},
+    {"type": "code-span", "match": "useEffect", "expected_dir": "ltr", "expected_attr": "ltr"}
+  ]
+}

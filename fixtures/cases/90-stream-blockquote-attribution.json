@@ -1,0 +1,22 @@
+{
+  "id": "90-stream-blockquote-attribution",
+  "description": "Stream of an Arabic blockquote that gets an English attribution. The quote stays rtl; the attribution paragraph is none while it is only a dash, then ltr.",
+  "partial": true,
+  "chunks": [
+    { "markdown": "> العلم",
+      "blocks": [
+        {"type": "blockquote", "match": "العلم", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "paragraph", "match": "العلم", "expected_dir": "rtl", "expected_attr": "auto"}
+      ] },
+    { "markdown": "> العلم نور\n>\n> —",
+      "blocks": [
+        {"type": "blockquote", "match": "العلم", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "paragraph", "match": "—", "expected_dir": "none", "expected_attr": "auto"}
+      ] },
+    { "markdown": "> العلم نور\n>\n> — Einstein",
+      "blocks": [
+        {"type": "blockquote", "match": "العلم", "expected_dir": "rtl", "expected_attr": "rtl"},
+        {"type": "paragraph", "match": "Einstein", "expected_dir": "ltr", "expected_attr": "auto"}
+      ] }
+  ]
+}
