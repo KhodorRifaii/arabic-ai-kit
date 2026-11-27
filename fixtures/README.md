@@ -48,5 +48,5 @@ What the adapter must emit as the `dir` attribute on that element: `auto` (brows
 ## Notes
 
 - Each case is a small, realistic Lebanese or Modern Arabic sentence with English tech words (AI, RAG, pgvector, Render).
-- The reference packages in `~/Documents/Agents/Ali/bidi-test` (markdown-it-bidi, rehype-github-dir) set `dir="auto"` on h1, p, ul, ol, table and cells, but not on `li`, `pre` or `code`, and markdown-it-bidi leaves the first `th` without `dir`. The kit must add those.
+- The reference packages markdown-it-bidi and rehype-github-dir set `dir="auto"` on h1, p, ul, ol, table and cells, but not on `li`, `pre` or `code`, and markdown-it-bidi leaves the first `th` without `dir`. The kit must add those.
 - `expected_dir` was checked against the Unicode first-strong rule (Python `unicodedata`) and against the reference output with the `dir` attribute resolved the way a browser does. Differences are the cases above that name the kit's job.
